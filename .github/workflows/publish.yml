@@ -1,0 +1,48 @@
+name: Publish BOMING Air blog
+
+on:
+  schedule:
+    - cron: '0 15 * * *'      # ~08:00 PT daily (15:00 UTC); GitHub may delay a few min
+  workflow_dispatch: {}         # manual "Run workflow" button
+
+permissions:
+  contents: write               # commit new post + site back to repo
+  pages: write                  # deploy to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: boming-publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Generate today's article
+        env:
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          GROK_MODEL: ${{ secrets.GROK_MODEL }}
+        run: python generate.py
+      - name: Commit new content
+        run: |
+          git config user.name  "boming-bot"
+          git config user.email "bot@bomingair.com"
+          git add posts.json site
+          git commit -m "auto: new post $(date -u +%F)" || echo "no changes"
+          git push || echo "push skipped"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

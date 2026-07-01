@@ -1,0 +1,193 @@
+"""HTML rendering + SEO for the BOMING Air static blog."""
+import json, html, datetime, pathlib
+import config as C
+
+
+def _head(title, desc, canonical, og_type="article", extra_ld=""):
+    t = html.escape(title)
+    d = html.escape(desc)
+    return f"""<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{t} | {C.BIZ_SHORT}</title>
+<meta name="description" content="{d}">
+<link rel="canonical" href="{canonical}">
+<meta property="og:type" content="{og_type}"><meta property="og:title" content="{t}">
+<meta property="og:description" content="{d}"><meta property="og:url" content="{canonical}">
+<meta property="og:site_name" content="{C.BIZ_NAME}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
+{extra_ld}
+</head><body>"""
+
+
+def _localbiz_ld():
+    return {
+        "@type": "HVACBusiness",
+        "name": C.BIZ_NAME,
+        "telephone": C.PHONE_TEL,
+        "email": C.EMAIL,
+        "url": C.MAIN_SITE,
+        "areaServed": C.REGION,
+        "address": {"@type": "PostalAddress", "addressLocality": C.CITY_BASE,
+                    "addressRegion": C.STATE, "postalCode": C.ZIP, "addressCountry": "US"},
+    }
+
+
+def _header():
+    return f"""<header class="site"><div class="wrap">
+<a class="logo" href="/">{C.BIZ_SHORT}<span>Air Conditioning &amp; Heating</span></a>
+<a class="callbtn" href="tel:{C.PHONE_TEL}">📞 {C.PHONE}</a>
+</div></header>"""
+
+
+def _footer():
+    cities = ", ".join(C.CITIES[:10]) + " &amp; more"
+    return f"""<footer class="site"><div class="wrap">
+<p class="cta"><strong>Need HVAC service in {C.REGION}?</strong>
+Licensed AC &amp; heating repair, maintenance &amp; installation.
+Call <a href="tel:{C.PHONE_TEL}">{C.PHONE}</a> or email
+<a href="mailto:{C.EMAIL}">{C.EMAIL}</a>.</p>
+<p class="area"><strong>Service area:</strong> {cities}</p>
+<p class="mini"><a href="{C.MAIN_SITE}">← {C.MAIN_SITE.replace('https://','')}</a> ·
+© {datetime.date.today().year} {C.BIZ_NAME}</p>
+</div></footer></body></html>"""
+
+
+def _cta_box(city):
+    return f"""<div class="ctabox">
+<h3>Trusted AC &amp; heating help in {html.escape(city)}</h3>
+<p>{C.BIZ_NAME} is a licensed HVAC contractor serving {html.escape(city)} and the surrounding {C.REGION} area. Whether it's a no-cool emergency, a tune-up, or a new system, we're here to help.</p>
+<a class="callbtn big" href="tel:{C.PHONE_TEL}">📞 Call {C.PHONE}</a>
+</div>"""
+
+
+def write_article(site: pathlib.Path, post: dict):
+    url = f"{C.BLOG_URL}/posts/{post['slug']}.html"
+    faq = post.get("faq") or []
+
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "BlogPosting", "headline": post["title"],
+         "description": post["meta"], "datePublished": post["date"],
+         "dateModified": post["date"], "mainEntityOfPage": url,
+         "author": {"@type": "Organization", "name": C.BIZ_NAME},
+         "publisher": {"@type": "Organization", "name": C.BIZ_NAME}},
+        _localbiz_ld(),
+    ]}
+    if faq:
+        ld["@graph"].append({"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": f["q"],
+             "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in faq]})
+    ld_tag = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>"
+
+    faq_html = ""
+    if faq:
+        items = "".join(
+            f'<div class="faq-item"><h3>{html.escape(f["q"])}</h3><p>{html.escape(f["a"])}</p></div>'
+            for f in faq)
+        faq_html = f'<section class="faq"><h2>Frequently asked questions</h2>{items}</section>'
+
+    try:
+        d = datetime.date.fromisoformat(post["date"]).strftime("%B %d, %Y").replace(" 0", " ")
+    except Exception:
+        d = post["date"]
+
+    body = f"""{_head(post['title'], post['meta'], url, extra_ld=ld_tag)}
+{_header()}
+<main class="article"><div class="wrap">
+<nav class="crumb"><a href="/">Blog</a> › <span>{html.escape(post['city'])}</span></nav>
+<div class="hero"><span class="hero-ico">❄️</span></div>
+<h1>{html.escape(post['title'])}</h1>
+<p class="byline">By {C.BIZ_SHORT} · {d} · Serving {html.escape(post['city'])}, {C.STATE}</p>
+<article class="body">{post['body_html']}</article>
+{_cta_box(post['city'])}
+{faq_html}
+</div></main>
+{_footer()}"""
+    outdir = site / "posts"
+    outdir.mkdir(parents=True, exist_ok=True)
+    (outdir / f"{post['slug']}.html").write_text(body, encoding="utf-8")
+
+
+def write_index(site: pathlib.Path, posts: list):
+    cards = ""
+    for p in posts:
+        cards += f"""<a class="card" href="/posts/{p['slug']}.html">
+<div class="card-ico">❄️</div>
+<div class="card-body"><h2>{html.escape(p['title'])}</h2>
+<p>{html.escape(p['meta'])}</p>
+<span class="card-meta">{html.escape(p['city'])}, {C.STATE} · {p['date']}</span></div></a>"""
+    if not cards:
+        cards = "<p>New articles coming soon.</p>"
+    desc = f"Practical AC & heating tips for {C.REGION} homeowners from {C.BIZ_NAME}."
+    body = f"""{_head(f"HVAC Tips & Advice for {C.REGION}", desc, C.BLOG_URL + "/", og_type="website")}
+{_header()}
+<main class="index"><div class="wrap">
+<div class="intro"><h1>AC &amp; Heating Tips for {C.REGION}</h1>
+<p>Straight, useful advice from the licensed team at {C.BIZ_NAME} — serving {C.CITY_BASE} and nearby cities.</p></div>
+<div class="grid">{cards}</div>
+</div></main>
+{_footer()}"""
+    (site / "index.html").write_text(body, encoding="utf-8")
+
+
+def write_sitemap(site: pathlib.Path, posts: list):
+    urls = [f"<url><loc>{C.BLOG_URL}/</loc></url>"]
+    for p in posts:
+        urls.append(f"<url><loc>{C.BLOG_URL}/posts/{p['slug']}.html</loc>"
+                    f"<lastmod>{p['date']}</lastmod></url>")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+           + "".join(urls) + "</urlset>")
+    (site / "sitemap.xml").write_text(xml, encoding="utf-8")
+    (site / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {C.BLOG_URL}/sitemap.xml\n", encoding="utf-8")
+
+
+def write_static(site: pathlib.Path):
+    # custom domain for GitHub Pages
+    (site / "CNAME").write_text("blog.bomingair.com\n", encoding="utf-8")
+    (site / "style.css").write_text(CSS, encoding="utf-8")
+
+
+CSS = f""":root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK};--accent:{C.BRAND_ACCENT}}}
+*{{box-sizing:border-box}}body{{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+color:#1a2233;line-height:1.65;background:#f4f7fb}}
+.wrap{{max-width:820px;margin:0 auto;padding:0 20px}}
+a{{color:var(--blue);text-decoration:none}}a:hover{{text-decoration:underline}}
+header.site{{background:var(--dark);position:sticky;top:0;z-index:10}}
+header.site .wrap{{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}}
+.logo{{color:#fff;font-weight:800;font-size:20px;line-height:1}}
+.logo span{{display:block;font-weight:500;font-size:11px;letter-spacing:.5px;color:#9db8d8;margin-top:3px}}
+.callbtn{{background:var(--accent);color:#1a2233!important;font-weight:700;padding:9px 14px;border-radius:8px;white-space:nowrap}}
+.callbtn:hover{{text-decoration:none;filter:brightness(1.05)}}
+.callbtn.big{{display:inline-block;font-size:18px;padding:14px 22px;margin-top:6px}}
+main{{padding:26px 0 10px}}
+.crumb{{font-size:13px;color:#6b7a90;margin-bottom:14px}}
+.hero{{height:150px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--dark));
+display:flex;align-items:center;justify-content:center;margin-bottom:20px}}
+.hero-ico{{font-size:60px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}}
+h1{{font-size:30px;line-height:1.25;margin:6px 0 8px}}
+.byline{{color:#6b7a90;font-size:14px;margin:0 0 22px}}
+.body h2{{font-size:22px;margin:28px 0 10px}}.body h3{{font-size:18px;margin:20px 0 8px}}
+.body p,.body li{{font-size:17px}}.body ul{{padding-left:22px}}
+.ctabox{{background:#fff;border:1px solid #e2eaf3;border-left:5px solid var(--accent);
+border-radius:12px;padding:22px;margin:32px 0}}
+.ctabox h3{{margin:0 0 8px;font-size:20px}}
+.faq{{margin:34px 0}}.faq h2{{font-size:22px}}
+.faq-item{{background:#fff;border:1px solid #e2eaf3;border-radius:10px;padding:16px 18px;margin:12px 0}}
+.faq-item h3{{margin:0 0 6px;font-size:17px}}.faq-item p{{margin:0;color:#3a4658}}
+.intro h1{{margin-bottom:6px}}.intro p{{color:#4a5a70;font-size:17px;margin-top:0}}
+.grid{{display:grid;gap:16px;margin:24px 0}}
+.card{{display:flex;gap:16px;background:#fff;border:1px solid #e2eaf3;border-radius:14px;
+overflow:hidden;color:inherit}}
+.card:hover{{text-decoration:none;box-shadow:0 6px 20px rgba(10,60,120,.10);transform:translateY(-1px);transition:.15s}}
+.card-ico{{flex:0 0 84px;background:linear-gradient(135deg,var(--blue),var(--dark));
+display:flex;align-items:center;justify-content:center;font-size:34px}}
+.card-body{{padding:16px 18px}}.card-body h2{{margin:0 0 6px;font-size:19px;color:var(--dark)}}
+.card-body p{{margin:0 0 8px;color:#4a5a70;font-size:15px}}
+.card-meta{{font-size:13px;color:#8091a6}}
+footer.site{{background:var(--dark);color:#c7d6e8;margin-top:40px;padding:26px 0}}
+footer .cta{{font-size:16px}}footer a{{color:#8fc0ff}}
+footer .area{{font-size:14px;color:#9db8d8}}footer .mini{{font-size:13px;color:#7a93b3;margin-bottom:0}}
+@media(max-width:600px){{h1{{font-size:25px}}.card-ico{{flex-basis:64px;font-size:26px}}}}
+"""

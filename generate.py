@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+"""
+BOMING Air — auto blog generator.
+
+1. Picks a (topic, city) combo not used recently.
+2. Grok writes a genuinely useful, locally-specific, SEO-optimized HVAC post
+   as strict JSON (title, meta, body_html, FAQ, social captions).
+3. Renders a static article page + rebuilds index.html + sitemap.xml.
+
+Runs headless in GitHub Actions (daily cron). Needs XAI_API_KEY.
+"""
+import os, re, sys, json, html, random, datetime, pathlib
+import requests
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import config as C
+import render
+
+ROOT = pathlib.Path(__file__).parent
+SITE = ROOT / "site"
+POSTS_DB = ROOT / "posts.json"
+
+XAI_KEY = os.environ.get("XAI_API_KEY", "")
+MODEL   = os.environ.get("GROK_MODEL", "grok-4.3")
+
+
+def load_posts():
+    if POSTS_DB.exists():
+        return json.loads(POSTS_DB.read_text(encoding="utf-8"))
+    return []
+
+
+def save_posts(posts):
+    POSTS_DB.write_text(json.dumps(posts, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def pick_topic(posts):
+    """Choose a (topic, city) pair avoiding the most recent combos."""
+    used = {(p["topic"], p["city"]) for p in posts}
+    combos = [(t, c) for t in C.TOPICS for c in C.CITIES if (t, c) not in used]
+    if not combos:                       # exhausted → allow reuse of oldest
+        combos = [(t, c) for t in C.TOPICS for c in C.CITIES]
+    # seasonal nudge: bias toward cooling topics in summer, heating in winter
+    month = datetime.date.today().month
+    def score(tc):
+        t = tc[0].lower()
+        s = random.random()
+        if month in (5, 6, 7, 8, 9) and ("ac" in t or "cool" in t or "heat wave" in t or "summer" in t):
+            s += 0.6
+        if month in (11, 12, 1, 2) and ("furnace" in t or "heat pump" in t or "winter" in t):
+            s += 0.6
+        return s
+    combos.sort(key=score, reverse=True)
+    return combos[0]
+
+
+PROMPT = """You are the content writer for {biz}, a licensed HVAC (air conditioning & heating) \
+contractor based in {base}, serving homeowners and businesses across {region} within about a 50-mile radius.
+
+Write ONE genuinely useful, trustworthy blog article for local customers on this topic:
+TOPIC: {topic}
+FEATURED CITY (weave in naturally 2-4 times, plus mention 2-3 nearby SoCal cities): {city}
+
+Requirements:
+- Audience: everyday SoCal homeowners/business owners searching Google for help. Warm, plain-English, expert but not salesy.
+- Locally specific: reference the SoCal climate (hot dry summers, Santa Ana winds, dust, older housing stock, high summer electric bills, desert-adjacent heat).
+- Genuinely helpful: real causes, real steps, honest "DIY this / call a pro for that" guidance. No fluff, no fake statistics, no invented awards.
+- Length: 550-750 words in the body.
+- Natural SEO: use the kind of phrases people actually search (e.g. "AC not cooling {city}", "HVAC repair near me"), but never keyword-stuff.
+- End with a soft, honest call to action to contact {biz} (do NOT promise specific prices, discounts, or guarantees you weren't given).
+
+Return ONLY strict JSON (no markdown fence) with these keys:
+{{
+ "title": "compelling <=65 char title, include the city",
+ "slug": "kebab-case-url-slug-no-city-year",
+ "meta_description": "<=155 char search snippet, includes city",
+ "hero_alt": "short alt text describing a relevant HVAC scene",
+ "body_html": "the article as clean HTML using only <h2>,<h3>,<p>,<ul>,<li>,<strong>,<em> tags. No <h1>. No inline styles. No script.",
+ "faq": [ {{"q":"question a local customer would ask","a":"concise 1-3 sentence answer"}}, ... 3 to 4 items ],
+ "social_fb": "a 2-4 sentence Facebook post promoting this article, friendly + emoji, ends with phone {phone}",
+ "social_yelp": "a 2-3 sentence neighborly Yelp/Nextdoor tip version, no hard sell"
+}}"""
+
+
+def call_grok(topic, city):
+    if not XAI_KEY:
+        sys.exit("[ERR] XAI_API_KEY not set")
+    prompt = PROMPT.format(biz=C.BIZ_NAME, base=C.CITY_BASE, region=C.REGION,
+                           topic=topic, city=city, phone=C.PHONE)
+    r = requests.post(
+        "https://api.x.ai/v1/chat/completions",
+        headers={"Authorization": f"Bearer {XAI_KEY}", "Content-Type": "application/json"},
+        json={
+            "model": MODEL,
+            "temperature": 0.7,
+            "messages": [
+                {"role": "system", "content": "You are an expert HVAC content writer. Output strict JSON only."},
+                {"role": "user", "content": prompt},
+            ],
+        },
+        timeout=180,
+    )
+    if r.status_code != 200:
+        sys.exit(f"[ERR] Grok HTTP {r.status_code}: {r.text[:600]}")
+    txt = r.json()["choices"][0]["message"]["content"].strip()
+    txt = re.sub(r"^```(?:json)?|```$", "", txt.strip(), flags=re.MULTILINE).strip()
+    m = re.search(r"\{.*\}", txt, re.DOTALL)
+    if not m:
+        sys.exit(f"[ERR] no JSON in Grok reply:\n{txt[:600]}")
+    return json.loads(m.group(0))
+
+
+def slugify(s):
+    s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+    return s[:70] or "post"
+
+
+def main():
+    posts = load_posts()
+    topic, city = pick_topic(posts)
+    print(f"[gen] topic={topic!r} city={city!r} model={MODEL}")
+    art = call_grok(topic, city)
+
+    today = datetime.date.today().isoformat()
+    base_slug = slugify(art.get("slug") or art["title"])
+    slug = f"{base_slug}-{slugify(city)}"
+    # ensure unique
+    existing = {p["slug"] for p in posts}
+    if slug in existing:
+        slug = f"{slug}-{today}"
+
+    post = {
+        "slug": slug,
+        "title": art["title"].strip(),
+        "meta": art["meta_description"].strip(),
+        "hero_alt": art.get("hero_alt", "").strip(),
+        "body_html": art["body_html"].strip(),
+        "faq": art.get("faq", []),
+        "social_fb": art.get("social_fb", "").strip(),
+        "social_yelp": art.get("social_yelp", "").strip(),
+        "topic": topic,
+        "city": city,
+        "date": today,
+    }
+    posts.insert(0, post)          # newest first
+    save_posts(posts)
+
+    SITE.mkdir(exist_ok=True)
+    render.write_article(SITE, post)
+    render.write_index(SITE, posts)
+    render.write_sitemap(SITE, posts)
+    render.write_static(SITE)
+
+    # stash social captions for the (manual) Yelp/Nextdoor + (auto) FB steps
+    (ROOT / "latest_social.json").write_text(
+        json.dumps({"url": f"{C.BLOG_URL}/posts/{slug}.html",
+                    "title": post["title"],
+                    "fb": post["social_fb"],
+                    "yelp": post["social_yelp"]}, ensure_ascii=False, indent=2),
+        encoding="utf-8")
+    print(f"[ok] published: {C.BLOG_URL}/posts/{slug}.html")
+
+
+if __name__ == "__main__":
+    main()
