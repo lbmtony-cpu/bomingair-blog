@@ -155,6 +155,10 @@ def rewrite(title):
     return json.loads(re.search(r"\{.*\}", txt, re.DOTALL).group(0))
 
 
+def _wc(h):
+    return len(re.sub(r"<[^>]+>", " ", h).split())
+
+
 def migrate_one(url, posts, existing_slugs, existing_src):
     if url in existing_src:
         print(f"[skip] already migrated: {url}")
@@ -162,6 +166,14 @@ def migrate_one(url, posts, existing_slugs, existing_src):
     title0, imgs = scrape(url)
     print(f"[mig] {title0!r}  ({len(imgs)} photos)")
     art = rewrite(title0)
+    if _wc(art.get("body_html", "")) < 340:      # too thin → one retry for length
+        print(f"    [short {_wc(art['body_html'])}w] retrying for length")
+        try:
+            art2 = rewrite(title0 + " — write a thorough, detailed 450-word article")
+            if _wc(art2.get("body_html", "")) > _wc(art.get("body_html", "")):
+                art = art2
+        except Exception as e:
+            print(f"    [retry failed, keeping first] {e}")
     slug = slugify(art.get("slug") or art["title"])
     while slug in existing_slugs:
         slug += "-x"
@@ -196,6 +208,8 @@ def main():
         args = ["--pilot"]
     if args[0] == "--pilot":
         urls = PILOT
+    elif args[0] == "--curated":
+        urls = [u.strip() for u in (ROOT / "_curated_urls.txt").read_text().splitlines() if u.strip()]
     elif args[0].startswith("http"):
         urls = args
     else:

@@ -7,6 +7,10 @@ header.site{background:var(--dark);position:sticky;top:0;z-index:10}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
 .logo{color:#fff;font-weight:800;font-size:20px;line-height:1}
 .logo span{display:block;font-weight:500;font-size:11px;letter-spacing:.5px;color:#9db8d8;margin-top:3px}
+.topnav{display:flex;gap:18px;margin:0 16px}
+.topnav a{color:#c7d6e8;font-size:14px;font-weight:600}
+.topnav a:hover{color:#fff;text-decoration:none}
+@media(max-width:520px){.topnav{display:none}}
 .callbtn{background:var(--accent);color:#1a2233!important;font-weight:700;padding:9px 14px;border-radius:8px;white-space:nowrap}
 .callbtn:hover{text-decoration:none;filter:brightness(1.05)}
 .callbtn.big{display:inline-block;font-size:18px;padding:14px 22px;margin-top:6px}
