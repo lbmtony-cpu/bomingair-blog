@@ -1,0 +1,287 @@
+{
+ "installation-of-5-ton-bosch-heat-pump-system": {
+  "shows": "Bosch heat pump unit with ducts and pipes in utility room",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "3-ton-goodman-ac-system-installation-r32": {
+  "shows": "Goodman HVAC unit in attic with ducts and piping",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "install-6-mini-splits-in-two-days": {
+  "shows": "White TOSOT mini-split AC unit mounted on indoor wall",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "2-5-ton-goodman-heat-pump-installation": {
+  "shows": "Furnace, Rheem water heater, ductwork in utility room",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "1-5-ton-daikin-mini-split-system-installation": {
+  "shows": "Daikin mini-split AC unit mounted on wall with ladder below",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "how-to-choose-the-perfect-ac-unit-for-your-home": {
+  "shows": "Gray AC Pro inverter unit on black pads outside building",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "high-efficiency-heat-pump-installation": {
+  "shows": "White rectangular air vent on textured wall",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "r407c-replacement-for-r22-half-price": {
+  "shows": "AC unit with gauges and refrigerant tank connected by hoses",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "5-ton-trane-system-installation-r454b-refrigerant": {
+  "shows": "Trane HVAC furnace unit in closet with ducts and water heater",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "9000-btu-mitsubishi-mini-split-system-installation": {
+  "shows": "Mitsubishi mini-split AC unit mounted on indoor wall",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "1-5-ton-mitsubishi-mini-split-installation": {
+  "shows": "Mitsubishi mini-split indoor unit mounted above open doorway to patio",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "1-5-ton-tcl-mini-split-system-installation": {
+  "shows": "Outdoor TCL mini-split AC condenser on blocks with wiring and wall",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "two-3-ton-tcl-mini-split-systems-installation-auditorium": {
+  "shows": "Auditorium with stage, screen and two wall-mounted mini-split units",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "ductless-heat-pump-installation-warehouse": {
+  "shows": "White ductless HVAC unit on industrial rooftop",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "installation-of-2-ton-tosot-mini-split-system-for-garage-adu": {
+  "shows": "White mini-split AC unit mounted on unfinished wall with plastic wrap",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "3-ton-tosot-mini-split-heat-pump-with-3-indoor-blowers": {
+  "shows": "Outdoor TOSOT inverter mini-split heat pump unit on gravel",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "5-ton-tosot-inverter-heat-pump-system-installation": {
+  "shows": "Gray Tosot HVAC unit installed in narrow utility closet with pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "5-ton-pioneer-heat-pump-installation-super-quiet": {
+  "shows": "Pioneer HVAC unit beside Bradford White water heater in utility space",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "1-ton-gree-mini-split-heat-pump-installation": {
+  "shows": "GREE mini-split outdoor unit on blocks beside gray house wall",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "3-ton-midea-heat-pump-system-installation": {
+  "shows": "Midea HVAC unit in narrow closet with ducts and pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "5-ton-rheem-heat-pump-newly-built-house": {
+  "shows": "Gray Rheem HVAC condenser unit beside stucco house wall",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "3-ton-rheem-heat-pump-installation": {
+  "shows": "Gray outdoor HVAC unit with fan on concrete",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "4-ton-american-standard-system-installation": {
+  "shows": "Gray American Standard HVAC furnace front panel with vents and label",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "5-ton-american-standard-ac-system-installation": {
+  "shows": "American Standard furnace with ducts, pipes, and insulation in utility area",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "3-ton-trane-heat-pump-installation": {
+  "shows": "Trane HVAC unit in open closet with pipes and wires",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "2-ton-lennox-heatpump-roof-unit-installation": {
+  "shows": "Gray rectangular HVAC unit on rooftop with worker and pipes nearby",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "3-ton-lennox-heat-pump-roof-unit-installation": {
+  "shows": "Gray Lennox heat pump unit on a concrete rooftop",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "5-ton-lennox-ac-system-installation": {
+  "shows": "Lennox Elite furnace with pipes and water heater nearby",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "4-ton-commercial-heat-pump-roof-unit-460v-3-phase": {
+  "shows": "Wrapped commercial HVAC unit lifted by crane straps above roof",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "day-night-3-phase-package-unit-installation": {
+  "shows": "Crane lifting large gray HVAC package unit beside building",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "2-5-ton-day-night-package-unit-installation": {
+  "shows": "Gray HVAC package unit on rooftop with pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "install-4-roof-package-heat-pumps-in-2-days": {
+  "shows": "Gray packaged rooftop HVAC unit on flat commercial roof",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "four-ac-systems-two-days-three-gas-one-heat-pump": {
+  "shows": "Cardboard AC unit boxes beside red crane truck on pavement",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "install-two-4-ton-heat-pump-systems-in-one-day": {
+  "shows": "Two HVAC units installed side by side in an attic",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "two-4-ton-ac-pro-heat-pump-systems-installation-for-office": {
+  "shows": "Rooftop HVAC units including York and AC Pro with palm trees",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "transform-water-heater-ac-system-into-heat-pump": {
+  "shows": "Gloved hand holding small brass component with thin wire",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "3-ton-heat-pump-installation-gas-furnace-replacement": {
+  "shows": "Outdoor gray HVAC condenser unit with top fan on concrete pad",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "high-efficiency-furnace-installation": {
+  "shows": "High-efficiency furnace with white PVC pipes in attic",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "replace-5-ton-furnace-basement-rain-damage": {
+  "shows": "Gray furnace in basement with water on concrete floor and connected pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "quiet-payne-ac-installation-southern-california-home": {
+  "shows": "Payne AC condenser unit on grass outside house",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "new-installation-in-moreno-valley": {
+  "shows": "Outdoor AC unit beside stucco house with tools on ground",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "twin-installation-southern-california-home": {
+  "shows": "Two outdoor AC units next to building wall and door",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "new-york-installation-southern-california-home": {
+  "shows": "York HVAC furnace in attic with ducts and pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "ac-pro-x-series-heat-pumps-inverter-technology-installation": {
+  "shows": "Gray AC Pro HVAC unit with pipes and yellow wires",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "walk-in-cooler-repair-pizza-restaurant": {
+  "shows": "Ceiling-mounted refrigeration unit with two fans above dough trays",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "walk-in-freezer-and-cooler-repaired": {
+  "shows": "Open electrical panels of Turbo Air units with exposed wiring",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "fix-evaporative-cooler-service-southern-california": {
+  "shows": "Disassembled evaporative cooler unit with removed motor and standing water",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "party-balloon-coil-poor-airflow-ice-repair": {
+  "shows": "Plastic bag with orange object on dirty coil in HVAC unit",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "blower-wheel-replacement-reliable-heating": {
+  "shows": "Technician servicing open rooftop HVAC unit with blower wheel exposed",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "inducer-fan-motor-failure-common-furnace-repair": {
+  "shows": "Open furnace showing inducer motor, gas valve, and burners",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "goodman-furnace-circuit-board-replacement": {
+  "shows": "Close-up of furnace circuit board with connected multicolored wires",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "leaking-coil-hiding-inside-tough-replacement": {
+  "shows": "Gray HVAC furnace with vent pipe in unfinished attic",
+  "is_hvac_equipment": true,
+  "matches_title": false
+ },
+ "roof-unit-refrigerant-leaks-repaired": {
+  "shows": "Side-by-side before/after photos of repaired HVAC compressor",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "when-ice-builds-up-it-will-damage-your-ceiling-and-ac": {
+  "shows": "Open HVAC unit with heavy ice buildup on coils and pipes",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "replace-compressor-reliable-cooling": {
+  "shows": "Two black cylindrical compressors on pavement beside hand truck and tools",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "air-balance-test-commercial-package-unit": {
+  "shows": "Open commercial rooftop HVAC package unit with exposed internals and tools",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ },
+ "hvac-preventive-maintenance-office-building": {
+  "shows": "Rooftop HVAC unit with open panel and tools on commercial roof",
+  "is_hvac_equipment": true,
+  "matches_title": true
+ }
+}
