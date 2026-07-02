@@ -163,7 +163,7 @@ def write_sitemap(site: pathlib.Path, posts: list):
         f"User-agent: *\nAllow: /\nSitemap: {C.BLOG_URL}/sitemap.xml\n", encoding="utf-8")
 
 
-def write_embed(site: pathlib.Path, posts: list, n: int = 6):
+def write_embed(site: pathlib.Path, posts: list, n: int = 8):
     """Standalone cards strip to iframe-embed on bomingair.com (auto-updates)."""
     cards = ""
     for p in posts[:n]:
