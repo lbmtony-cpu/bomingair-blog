@@ -6,10 +6,11 @@ import config as C
 def _head(title, desc, canonical, og_type="article", extra_ld=""):
     t = html.escape(title)
     d = html.escape(desc)
+    gsc = f'<meta name="google-site-verification" content="{C.GSC_VERIFY}">' if C.GSC_VERIFY else ""
     return f"""<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{t} | {C.BIZ_SHORT}</title>
-<meta name="description" content="{d}">
+<meta name="description" content="{d}">{gsc}
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="{og_type}"><meta property="og:title" content="{t}">
 <meta property="og:description" content="{d}"><meta property="og:url" content="{canonical}">
@@ -206,6 +207,9 @@ def write_static(site: pathlib.Path):
     # custom domain for GitHub Pages
     (site / "CNAME").write_text("blog.bomingair.com\n", encoding="utf-8")
     (site / "style.css").write_text(CSS, encoding="utf-8")
+    if getattr(C, "GSC_FILE", ""):      # Google Search Console verification file
+        (site / C.GSC_FILE).write_text(
+            f"google-site-verification: {C.GSC_FILE}\n", encoding="utf-8")
 
 
 CSS = f""":root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK};--accent:{C.BRAND_ACCENT}}}

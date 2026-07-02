@@ -13,6 +13,10 @@ STATE      = "CA"
 ZIP        = "91709"
 
 # Brand
+# Google Search Console — HTML-file verification (filename Google assigned)
+GSC_VERIFY = ""
+GSC_FILE = "googlea05971f2f403f6f1.html"
+
 BRAND_BLUE   = "#0A5CB8"
 BRAND_DARK   = "#0b2340"
 BRAND_ACCENT = "#f5a623"
