@@ -17,12 +17,30 @@ BRAND_BLUE   = "#0A5CB8"
 BRAND_DARK   = "#0b2340"
 BRAND_ACCENT = "#f5a623"
 
-# Service-area cities we rotate through (base + ~50mi SoCal reach)
-CITIES = [
-    "Chino Hills", "Chino", "Diamond Bar", "Walnut", "Rowland Heights",
-    "Pomona", "Ontario", "Corona", "Eastvale", "Yorba Linda", "Brea",
-    "Montclair", "Upland", "Rancho Cucamonga", "Fontana", "Norco",
-    "Anaheim Hills", "Riverside",
+# Service-area cities. Weight = SEO winnability (smaller/closer = easier to rank).
+# Higher weight -> picked more often. Big competitive cities kept but low weight.
+CITIES_WEIGHTED = [
+    ("Chino Hills", 5), ("Chino", 5), ("Diamond Bar", 5), ("Walnut", 4),
+    ("Rowland Heights", 4), ("Norco", 4), ("Eastvale", 4), ("Yorba Linda", 3),
+    ("Brea", 3), ("Montclair", 3), ("Pomona", 3), ("Ontario", 3),
+    ("Upland", 2), ("Anaheim Hills", 2), ("Corona", 2), ("Rancho Cucamonga", 2),
+    ("Fontana", 1), ("Riverside", 1),
+]
+CITIES = [c for c, _ in CITIES_WEIGHTED]
+
+# HIGH-INTENT service/problem topics — the easiest to rank + best for leads.
+# "{city}" is filled in; these become the page's primary keyword.
+SERVICE_TEMPLATES = [
+    "AC repair in {city}: signs you need it and what to expect",
+    "Emergency AC repair in {city} during a heat wave",
+    "AC not cooling in {city}? Common causes and fixes",
+    "AC installation and replacement in {city}: a homeowner's guide",
+    "Furnace and heating repair in {city} before winter",
+    "AC maintenance and tune-ups in {city}: why they pay off",
+    "AC blowing warm air in {city}: what it means",
+    "Choosing an HVAC contractor in {city}: what to look for",
+    "Commercial HVAC service in {city} for local businesses",
+    "Ductless mini-split installation in {city}: is it right for you",
 ]
 
 # Evergreen + seasonal HVAC topic seeds (customer-intent, not industry news)

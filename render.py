@@ -61,7 +61,26 @@ def _cta_box(city):
 </div>"""
 
 
-def write_article(site: pathlib.Path, post: dict):
+def _related_block(post, all_posts):
+    if not all_posts:
+        return ""
+    others = [p for p in all_posts if p["slug"] != post["slug"]]
+    same_city = [p for p in others if p.get("city") == post.get("city")]
+    picks, seen = [], set()
+    for p in same_city + others:
+        if p["slug"] in seen:
+            continue
+        seen.add(p["slug"]); picks.append(p)
+        if len(picks) == 3:
+            break
+    if not picks:
+        return ""
+    items = "".join(
+        f'<li><a href="/posts/{p["slug"]}.html">{html.escape(p["title"])}</a></li>' for p in picks)
+    return f'<section class="related"><h2>Related articles</h2><ul>{items}</ul></section>'
+
+
+def write_article(site: pathlib.Path, post: dict, all_posts=None):
     url = f"{C.BLOG_URL}/posts/{post['slug']}.html"
     faq = post.get("faq") or []
 
@@ -101,6 +120,7 @@ def write_article(site: pathlib.Path, post: dict):
 <article class="body">{post['body_html']}</article>
 {_cta_box(post['city'])}
 {faq_html}
+{_related_block(post, all_posts)}
 </div></main>
 {_footer()}"""
     outdir = site / "posts"
@@ -214,6 +234,9 @@ border-radius:12px;padding:22px;margin:32px 0}}
 .faq{{margin:34px 0}}.faq h2{{font-size:22px}}
 .faq-item{{background:#fff;border:1px solid #e2eaf3;border-radius:10px;padding:16px 18px;margin:12px 0}}
 .faq-item h3{{margin:0 0 6px;font-size:17px}}.faq-item p{{margin:0;color:#3a4658}}
+.related{{margin:34px 0}}.related h2{{font-size:20px}}
+.related ul{{list-style:none;padding:0;margin:0}}
+.related li{{padding:10px 0;border-bottom:1px solid #e2eaf3;font-size:17px}}
 .intro h1{{margin-bottom:6px}}.intro p{{color:#4a5a70;font-size:17px;margin-top:0}}
 .grid{{display:grid;gap:16px;margin:24px 0}}
 .card{{display:flex;gap:16px;background:#fff;border:1px solid #e2eaf3;border-radius:14px;

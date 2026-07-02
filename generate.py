@@ -34,24 +34,32 @@ def save_posts(posts):
     POSTS_DB.write_text(json.dumps(posts, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def _weighted_city():
+    pool = []
+    for c, w in C.CITIES_WEIGHTED:
+        pool += [c] * w
+    return random.choice(pool)
+
+
 def pick_topic(posts):
-    """Choose a (topic, city) pair avoiding the most recent combos."""
-    used = {(p["topic"], p["city"]) for p in posts}
-    combos = [(t, c) for t in C.TOPICS for c in C.CITIES if (t, c) not in used]
-    if not combos:                       # exhausted → allow reuse of oldest
-        combos = [(t, c) for t in C.TOPICS for c in C.CITIES]
-    # seasonal nudge: bias toward cooling topics in summer, heating in winter
+    """Pick (kind, topic, city). Bias to high-intent service+city (winnable SEO),
+    weighted toward smaller/closer cities, avoiding recently used combos."""
+    used = {(p.get("topic"), p.get("city")) for p in posts}
     month = datetime.date.today().month
-    def score(tc):
-        t = tc[0].lower()
-        s = random.random()
-        if month in (5, 6, 7, 8, 9) and ("ac" in t or "cool" in t or "heat wave" in t or "summer" in t):
-            s += 0.6
-        if month in (11, 12, 1, 2) and ("furnace" in t or "heat pump" in t or "winter" in t):
-            s += 0.6
-        return s
-    combos.sort(key=score, reverse=True)
-    return combos[0]
+    for _ in range(60):
+        kind = "service" if random.random() < 0.7 else "guide"
+        city = _weighted_city()
+        if kind == "service":
+            tmpl = random.choice(C.SERVICE_TEMPLATES)
+            # seasonal skip: don't push furnace pieces in peak summer
+            if month in (6, 7, 8, 9) and "furnace" in tmpl.lower() and random.random() < 0.8:
+                continue
+            topic = tmpl.format(city=city)
+        else:
+            topic = random.choice(C.TOPICS)
+        if (topic, city) not in used:
+            return kind, topic, city
+    return kind, topic, city  # give up dedup after 60 tries
 
 
 PROMPT = """You are the content writer for {biz}, a licensed HVAC (air conditioning & heating) \
@@ -63,10 +71,10 @@ FEATURED CITY (weave in naturally 2-4 times, plus mention 2-3 nearby SoCal citie
 
 Requirements:
 - Audience: everyday SoCal homeowners/business owners searching Google for help. Warm, plain-English, expert but not salesy.
+- PRIMARY LOCAL KEYWORD: naturally use the main "service + {city}" phrase (e.g. "AC repair in {city}") in the TITLE, in the FIRST sentence, and 2-3 more times in the body. Also mention 2-3 nearby SoCal cities once each. Never keyword-stuff or repeat robotically.
 - Locally specific: reference the SoCal climate (hot dry summers, Santa Ana winds, dust, older housing stock, high summer electric bills, desert-adjacent heat).
 - Genuinely helpful: real causes, real steps, honest "DIY this / call a pro for that" guidance. No fluff, no fake statistics, no invented awards.
-- Length: 550-750 words in the body.
-- Natural SEO: use the kind of phrases people actually search (e.g. "AC not cooling {city}", "HVAC repair near me"), but never keyword-stuff.
+- LENGTH IS MANDATORY: the body_html must be AT LEAST 600 words (aim 600-750). Write enough real, specific detail to hit this — do not pad with filler. Use 4-6 <h2> sections.
 - End with a soft, honest call to action to contact {biz} (do NOT promise specific prices, discounts, or guarantees you weren't given).
 
 Return ONLY strict JSON (no markdown fence) with these keys:
@@ -115,11 +123,20 @@ def slugify(s):
     return s[:70] or "post"
 
 
+def _wc(html_str):
+    return len(re.sub(r"<[^>]+>", " ", html_str).split())
+
+
 def main():
     posts = load_posts()
-    topic, city = pick_topic(posts)
-    print(f"[gen] topic={topic!r} city={city!r} model={MODEL}")
+    kind, topic, city = pick_topic(posts)
+    print(f"[gen] kind={kind} topic={topic!r} city={city!r} model={MODEL}")
     art = call_grok(topic, city)
+    if _wc(art.get("body_html", "")) < 520:      # one retry if too short for SEO
+        print(f"[gen] short ({_wc(art['body_html'])}w), retrying for length")
+        art2 = call_grok(topic + " (write a thorough 650-word article)", city)
+        if _wc(art2.get("body_html", "")) > _wc(art.get("body_html", "")):
+            art = art2
 
     today = datetime.date.today().isoformat()
     base_slug = slugify(art.get("slug") or art["title"])
@@ -138,6 +155,7 @@ def main():
         "faq": art.get("faq", []),
         "social_fb": art.get("social_fb", "").strip(),
         "social_yelp": art.get("social_yelp", "").strip(),
+        "kind": kind,
         "topic": topic,
         "city": city,
         "date": today,
@@ -146,7 +164,7 @@ def main():
     save_posts(posts)
 
     SITE.mkdir(exist_ok=True)
-    render.write_article(SITE, post)
+    render.write_article(SITE, post, posts)
     render.write_index(SITE, posts)
     render.write_embed(SITE, posts)
     render.write_sitemap(SITE, posts)

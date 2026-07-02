@@ -25,6 +25,9 @@ border-radius:12px;padding:22px;margin:32px 0}
 .faq{margin:34px 0}.faq h2{font-size:22px}
 .faq-item{background:#fff;border:1px solid #e2eaf3;border-radius:10px;padding:16px 18px;margin:12px 0}
 .faq-item h3{margin:0 0 6px;font-size:17px}.faq-item p{margin:0;color:#3a4658}
+.related{margin:34px 0}.related h2{font-size:20px}
+.related ul{list-style:none;padding:0;margin:0}
+.related li{padding:10px 0;border-bottom:1px solid #e2eaf3;font-size:17px}
 .intro h1{margin-bottom:6px}.intro p{color:#4a5a70;font-size:17px;margin-top:0}
 .grid{display:grid;gap:16px;margin:24px 0}
 .card{display:flex;gap:16px;background:#fff;border:1px solid #e2eaf3;border-radius:14px;
