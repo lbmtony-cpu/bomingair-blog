@@ -81,6 +81,34 @@ def _related_block(post, all_posts):
     return f'<section class="related"><h2>Related articles</h2><ul>{items}</ul></section>'
 
 
+def _loc(post):
+    return post["city"] if post.get("city") == C.REGION else f"{post.get('city','')}, {C.STATE}"
+
+
+def _card_thumb(post, cls="card-thumb"):
+    ph = post.get("photos") or []
+    if not ph:
+        return ""
+    return f'<img class="{cls}" src="/{ph[0]}" alt="{html.escape(post["title"])}" loading="lazy">'
+
+
+def _hero_img(post):
+    ph = post.get("photos") or []
+    if not ph:
+        return ""
+    alt = html.escape(post.get("hero_alt") or post["title"])
+    return f'<img class="hero-img" src="/{ph[0]}" alt="{alt}" loading="eager">'
+
+
+def _gallery(post):
+    ph = post.get("photos") or []
+    if len(ph) < 2:
+        return ""
+    imgs = "".join(f'<img src="/{p}" alt="{html.escape(post["title"])} photo" loading="lazy">'
+                   for p in ph[1:])
+    return f'<section class="gallery"><h2>Photos from this job</h2><div class="gg">{imgs}</div></section>'
+
+
 def write_article(site: pathlib.Path, post: dict, all_posts=None):
     url = f"{C.BLOG_URL}/posts/{post['slug']}.html"
     faq = post.get("faq") or []
@@ -110,15 +138,17 @@ def write_article(site: pathlib.Path, post: dict, all_posts=None):
         d = datetime.date.fromisoformat(post["date"]).strftime("%B %d, %Y").replace(" 0", " ")
     except Exception:
         d = post["date"]
+    loc = post["city"] if post["city"] == C.REGION else f"{post['city']}, {C.STATE}"
 
     body = f"""{_head(post['title'], post['meta'], url, extra_ld=ld_tag)}
 {_header()}
 <main class="article"><div class="wrap">
-<nav class="crumb"><a href="/">Blog</a> › <span>{html.escape(post['city'])}</span></nav>
-<span class="pin">{html.escape(post['city'])}, {C.STATE}</span>
+{_hero_img(post)}<nav class="crumb"><a href="/">Blog</a> › <span>{html.escape(post['city'])}</span></nav>
+<span class="pin">{html.escape(loc)}</span>
 <h1>{html.escape(post['title'])}</h1>
-<p class="byline">By {C.BIZ_SHORT} · {d} · Serving {html.escape(post['city'])}, {C.STATE}</p>
+<p class="byline">By {C.BIZ_SHORT} · {d} · Serving {html.escape(loc)}</p>
 <article class="body">{post['body_html']}</article>
+{_gallery(post)}
 {_cta_box(post['city'])}
 {faq_html}
 {_related_block(post, all_posts)}
@@ -133,7 +163,7 @@ def write_index(site: pathlib.Path, posts: list):
     cards = ""
     for p in posts:
         cards += f"""<a class="card" href="/posts/{p['slug']}.html">
-<span class="card-city">{html.escape(p['city'])}, {C.STATE}</span>
+{_card_thumb(p)}<span class="card-city">{html.escape(_loc(p))}</span>
 <h2>{html.escape(p['title'])}</h2>
 <p>{html.escape(p['meta'])}</p>
 <span class="card-read">Read article &#8594;</span></a>"""
@@ -169,7 +199,7 @@ def write_embed(site: pathlib.Path, posts: list, n: int = 8):
     cards = ""
     for p in posts[:n]:
         cards += f"""<a class="ec" href="{C.BLOG_URL}/posts/{p['slug']}.html" target="_blank" rel="noopener">
-<span class="ecity">{html.escape(p['city'])}, {C.STATE}</span>
+{_card_thumb(p, cls="ethumb")}<span class="ecity">{html.escape(p['city'])}, {C.STATE}</span>
 <h3>{html.escape(p['title'])}</h3>
 <p>{html.escape(p['meta'])}</p>
 <span class="eread">Read article &#8594;</span></a>"""
@@ -185,6 +215,7 @@ body{{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color
 border-top:3px solid var(--accent);border-radius:10px;padding:16px 18px 14px;
 text-decoration:none;color:inherit;transition:.15s}}
 .ec:hover{{box-shadow:0 8px 22px rgba(10,60,120,.10);border-color:#cfe0f5;transform:translateY(-2px)}}
+.ethumb{{width:calc(100% + 36px);height:150px;object-fit:cover;margin:-16px -18px 12px;border-radius:7px 7px 0 0;display:block}}
 .ecity{{display:inline-block;align-self:flex-start;background:#eaf1fb;color:var(--blue);
 font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:10px}}
 .ec h3{{margin:0 0 8px;font-size:16px;line-height:1.35;color:var(--dark)}}
@@ -228,6 +259,10 @@ main{{padding:26px 0 10px}}
 .crumb{{font-size:13px;color:#6b7a90;margin-bottom:14px}}
 .pin{{display:inline-block;background:#eaf1fb;color:var(--blue);font-size:13px;font-weight:600;
 padding:4px 12px;border-radius:20px;margin-bottom:12px}}
+.hero-img{{width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:14px;margin-bottom:18px;display:block}}
+.gallery{{margin:30px 0}}.gallery h2{{font-size:20px}}
+.gg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}}
+.gg img{{width:100%;height:180px;object-fit:cover;border-radius:8px;display:block}}
 h1{{font-size:30px;line-height:1.25;margin:6px 0 8px}}
 .byline{{color:#6b7a90;font-size:14px;margin:0 0 22px}}
 .body h2{{font-size:22px;margin:28px 0 10px}}.body h3{{font-size:18px;margin:20px 0 8px}}
@@ -246,6 +281,8 @@ border-radius:12px;padding:22px;margin:32px 0}}
 .card{{display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;
 border-top:3px solid var(--accent);border-radius:10px;padding:16px 18px 14px;color:inherit;transition:.15s}}
 .card:hover{{text-decoration:none;box-shadow:0 8px 22px rgba(10,60,120,.10);border-color:#cfe0f5;transform:translateY(-2px)}}
+.card-thumb{{width:calc(100% + 36px);height:160px;object-fit:cover;margin:-16px -18px 12px;
+border-radius:7px 7px 0 0;display:block}}
 .card-city{{display:inline-block;align-self:flex-start;background:#eaf1fb;color:var(--blue);
 font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:10px}}
 .card h2{{margin:0 0 8px;font-size:17px;line-height:1.35;color:var(--dark)}}

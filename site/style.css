@@ -14,6 +14,10 @@ main{padding:26px 0 10px}
 .crumb{font-size:13px;color:#6b7a90;margin-bottom:14px}
 .pin{display:inline-block;background:#eaf1fb;color:var(--blue);font-size:13px;font-weight:600;
 padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.hero-img{width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:14px;margin-bottom:18px;display:block}
+.gallery{margin:30px 0}.gallery h2{font-size:20px}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.gg img{width:100%;height:180px;object-fit:cover;border-radius:8px;display:block}
 h1{font-size:30px;line-height:1.25;margin:6px 0 8px}
 .byline{color:#6b7a90;font-size:14px;margin:0 0 22px}
 .body h2{font-size:22px;margin:28px 0 10px}.body h3{font-size:18px;margin:20px 0 8px}
@@ -32,6 +36,8 @@ border-radius:12px;padding:22px;margin:32px 0}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;
 border-top:3px solid var(--accent);border-radius:10px;padding:16px 18px 14px;color:inherit;transition:.15s}
 .card:hover{text-decoration:none;box-shadow:0 8px 22px rgba(10,60,120,.10);border-color:#cfe0f5;transform:translateY(-2px)}
+.card-thumb{width:calc(100% + 36px);height:160px;object-fit:cover;margin:-16px -18px 12px;
+border-radius:7px 7px 0 0;display:block}
 .card-city{display:inline-block;align-self:flex-start;background:#eaf1fb;color:var(--blue);
 font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:10px}
 .card h2{margin:0 0 8px;font-size:17px;line-height:1.35;color:var(--dark)}
