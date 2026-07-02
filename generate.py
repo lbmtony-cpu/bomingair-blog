@@ -123,6 +123,28 @@ def slugify(s):
     return s[:70] or "post"
 
 
+def post_to_facebook(link, message):
+    """Auto-post the new article to the FB Page, if creds are configured.
+    Needs env FB_PAGE_ID + FB_PAGE_TOKEN (a long-lived Page access token)."""
+    page_id = (os.environ.get("FB_PAGE_ID") or "").strip()
+    token = (os.environ.get("FB_PAGE_TOKEN") or "").strip()
+    if not (page_id and token):
+        print("[fb] no FB creds set — skipping Facebook post")
+        return
+    try:
+        r = requests.post(
+            f"https://graph.facebook.com/v21.0/{page_id}/feed",
+            data={"message": message, "link": link, "access_token": token},
+            timeout=30,
+        )
+        if r.status_code == 200:
+            print(f"[fb] posted: {r.json().get('id','?')}")
+        else:
+            print(f"[fb][ERR] HTTP {r.status_code}: {r.text[:300]}", file=sys.stderr)
+    except Exception as e:
+        print(f"[fb][ERR] {e}", file=sys.stderr)
+
+
 def _wc(html_str):
     return len(re.sub(r"<[^>]+>", " ", html_str).split())
 
@@ -178,6 +200,9 @@ def main():
                     "yelp": post["social_yelp"]}, ensure_ascii=False, indent=2),
         encoding="utf-8")
     print(f"[ok] published: {C.BLOG_URL}/posts/{slug}.html")
+
+    fb_msg = post["social_fb"] or f"{post['title']} — {post['meta']}"
+    post_to_facebook(f"{C.BLOG_URL}/posts/{slug}.html", fb_msg)
 
 
 if __name__ == "__main__":
