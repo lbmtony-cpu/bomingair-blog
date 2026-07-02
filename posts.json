@@ -1,5 +1,36 @@
 [
   {
+    "slug": "ac-installation-replacement-homeowners-guide-corona",
+    "title": "AC Installation in Corona: Homeowner's Guide",
+    "meta": "Practical guide to AC installation in Corona covering local climate challenges, signs you need replacement, and steps for SoCal homeowners.",
+    "hero_alt": "Technician installing a new air conditioning unit on a residential rooftop in Southern California",
+    "body_html": "<h2>Understanding AC Installation in Corona</h2><p>If you're considering AC installation in Corona, the area's hot dry summers, frequent dust, and Santa Ana winds create unique demands on cooling systems. Homes here often face desert-adjacent heat that pushes equipment hard from May through October, leading to higher summer electric bills. Older housing stock in Corona commonly has undersized or aging units that struggle during peak heat. Nearby Riverside and Norco share these same conditions, so many homeowners there follow similar upgrade paths.</p><h2>Signs Your System Needs Replacement</h2><p>Uneven cooling, frequent repairs, and units older than 10-12 years are common triggers for replacement in Corona. High humidity spikes during rare coastal moisture events or heavy dust loading from winds can clog coils and reduce efficiency fast. Listen for unusual noises or notice rising energy use even when temperatures stay steady. If your system uses R-22 refrigerant, replacement is often wiser than repeated fixes because parts are scarce.</p><h2>Choosing the Right Equipment for Local Homes</h2><p>Focus on SEER2 ratings of 15 or higher to handle Corona's intense afternoon heat without oversized units that short-cycle. Heat pump options work well for milder shoulder seasons and can cut electric bills compared with older gas-pack systems. Consider two-stage or variable-speed compressors that manage dust and wind-driven temperature swings better than single-stage models. Ask about corrosion-resistant coils since Santa Ana winds carry fine particles that accelerate wear.</p><h2>The Installation Process Step by Step</h2><p>A proper job starts with a load calculation that accounts for your home's insulation, window orientation, and attic conditions common in Corona neighborhoods. Technicians remove the old equipment, check and upgrade electrical and ductwork as needed, then set the new outdoor condenser on a level pad away from prevailing winds. Indoor coil and air handler installation follows, with careful sealing to prevent dust infiltration. Final steps include refrigerant charging, airflow balancing, and thermostat programming tailored to local usage patterns.</p><h2>DIY Tasks Versus Calling a Pro</h2><p>Homeowners can safely replace filters monthly, clear debris from the outdoor unit, and program smart thermostats. Anything involving refrigerant lines, electrical connections, or duct modifications requires a licensed technician. Attempting these tasks yourself risks voiding warranties and can create safety issues in older Corona homes with outdated wiring. Professionals also verify permits and ensure the system meets current energy codes.</p><h2>Keeping Your New System Running Efficiently</h2><p>Schedule professional tune-ups each spring before the heat arrives. Keep at least two feet of clearance around the condenser and trim nearby vegetation that could add to the dust load. Use a programmable thermostat to avoid running the system during the coolest night hours when Santa Ana winds often drop temperatures quickly. These habits help control summer electric bills while extending equipment life in the region's demanding climate.</p><p>When you're ready to explore options for AC installation in Corona, the team at BOMING Air Conditioning & Heating can assess your home and explain realistic choices based on your current setup and usage.</p>",
+    "faq": [
+      {
+        "q": "How long does AC replacement usually take in Corona?",
+        "a": "Most full installations are completed in one to two days once the new equipment arrives, depending on ductwork condition."
+      },
+      {
+        "q": "Will a new AC lower my summer electric bills?",
+        "a": "Higher-efficiency models often reduce energy use noticeably, especially if your current unit is over 10 years old and running constantly in Corona heat."
+      },
+      {
+        "q": "Do I need a permit for AC installation in Corona?",
+        "a": "Yes, the city requires permits for new installations to ensure proper electrical and structural compliance."
+      },
+      {
+        "q": "What size system do most Corona homes need?",
+        "a": "Proper sizing comes from a Manual J load calculation rather than square footage alone, accounting for insulation and local sun exposure."
+      }
+    ],
+    "social_fb": "Corona summers are no joke with the dry heat and dust. This guide walks through real steps for AC installation in Corona so you know what actually matters before replacing your system. Helpful tips for nearby Riverside and Norco homeowners too. Call BOMING Air Conditioning & Heating at 657-275-5855 if you have questions.",
+    "social_yelp": "Just read a straightforward article on AC installation in Corona that covers the local climate issues we all deal with. No sales pitch, just clear info on when to replace and what to expect. Worth a look if you're in the area.",
+    "kind": "service",
+    "topic": "AC installation and replacement in Corona: a homeowner's guide",
+    "city": "Corona",
+    "date": "2026-07-02"
+  },
+  {
     "slug": "ac-repair-vs-replacement-decision-norco",
     "title": "AC Repair in Norco: Repair vs Replacement Decision",
     "meta": "Struggling with a failing AC in Norco? Learn how to decide between repair and replacement with local climate tips for Norco, Corona, Riverside, and Ontario homeowners.",
