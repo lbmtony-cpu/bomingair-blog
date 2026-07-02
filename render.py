@@ -35,7 +35,7 @@ def _localbiz_ld():
 
 def _header():
     return f"""<header class="site"><div class="wrap">
-<a class="logo" href="/">{C.BIZ_SHORT}<span>Air Conditioning &amp; Heating</span></a>
+<a class="logo" href="{C.MAIN_SITE}">{C.BIZ_SHORT}<span>Air Conditioning &amp; Heating</span></a>
 <a class="callbtn" href="tel:{C.PHONE_TEL}">📞 {C.PHONE}</a>
 </div></header>"""
 
