@@ -143,6 +143,44 @@ def write_sitemap(site: pathlib.Path, posts: list):
         f"User-agent: *\nAllow: /\nSitemap: {C.BLOG_URL}/sitemap.xml\n", encoding="utf-8")
 
 
+def write_embed(site: pathlib.Path, posts: list, n: int = 6):
+    """Standalone cards strip to iframe-embed on bomingair.com (auto-updates)."""
+    cards = ""
+    for p in posts[:n]:
+        cards += f"""<a class="ec" href="{C.BLOG_URL}/posts/{p['slug']}.html" target="_blank" rel="noopener">
+<div class="eic">&#10052;&#65039;</div>
+<div class="etx"><h3>{html.escape(p['title'])}</h3>
+<p>{html.escape(p['meta'])}</p>
+<span>{html.escape(p['city'])}, {C.STATE}</span></div></a>"""
+    doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>
+:root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK}}}
+*{{box-sizing:border-box}}html,body{{margin:0;background:transparent}}
+body{{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1a2233}}
+.eh{{font-size:22px;font-weight:800;color:var(--dark);margin:4px 0 4px}}
+.esub{{color:#5a6b82;font-size:15px;margin:0 0 16px}}
+.eg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}}
+.ec{{display:block;background:#fff;border:1px solid #e2eaf3;border-radius:12px;overflow:hidden;
+text-decoration:none;color:inherit;transition:.15s}}
+.ec:hover{{box-shadow:0 6px 18px rgba(10,60,120,.12);transform:translateY(-2px)}}
+.eic{{height:70px;background:linear-gradient(135deg,var(--blue),var(--dark));display:flex;
+align-items:center;justify-content:center;font-size:30px}}
+.etx{{padding:12px 14px}}.etx h3{{margin:0 0 6px;font-size:16px;line-height:1.3;color:var(--dark)}}
+.etx p{{margin:0 0 8px;font-size:13px;color:#5a6b82;line-height:1.45}}
+.etx span{{font-size:12px;color:#8091a6}}
+.eall{{display:inline-block;margin-top:16px;color:var(--blue);font-weight:700;text-decoration:none;font-size:15px}}
+</style></head><body>
+<div class="eh">HVAC Tips &amp; Advice for {C.REGION}</div>
+<p class="esub">Straight, useful advice from the licensed team at {C.BIZ_NAME}.</p>
+<div class="eg">{cards}</div>
+<a class="eall" href="{C.BLOG_URL}/" target="_blank" rel="noopener">View all articles &#8594;</a>
+<script>
+function ph(){{var h=document.body.scrollHeight;parent.postMessage({{bomingBlogHeight:h}},"*");}}
+window.addEventListener("load",ph);setInterval(ph,1000);
+</script></body></html>"""
+    (site / "embed.html").write_text(doc, encoding="utf-8")
+
+
 def write_static(site: pathlib.Path):
     # custom domain for GitHub Pages
     (site / "CNAME").write_text("blog.bomingair.com\n", encoding="utf-8")

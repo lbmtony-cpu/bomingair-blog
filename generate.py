@@ -148,6 +148,7 @@ def main():
     SITE.mkdir(exist_ok=True)
     render.write_article(SITE, post)
     render.write_index(SITE, posts)
+    render.write_embed(SITE, posts)
     render.write_sitemap(SITE, posts)
     render.write_static(SITE)
 
