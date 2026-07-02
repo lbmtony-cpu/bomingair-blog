@@ -20,8 +20,8 @@ ROOT = pathlib.Path(__file__).parent
 SITE = ROOT / "site"
 POSTS_DB = ROOT / "posts.json"
 
-XAI_KEY = os.environ.get("XAI_API_KEY", "")
-MODEL   = os.environ.get("GROK_MODEL", "grok-4.3")
+XAI_KEY = (os.environ.get("XAI_API_KEY") or "").strip()
+MODEL   = (os.environ.get("GROK_MODEL") or "grok-4.3").strip()
 
 
 def load_posts():

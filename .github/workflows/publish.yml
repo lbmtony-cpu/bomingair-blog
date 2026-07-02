@@ -31,7 +31,6 @@ jobs:
       - name: Generate today's article
         env:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
-          GROK_MODEL: ${{ secrets.GROK_MODEL }}
         run: python generate.py
       - name: Commit new content
         run: |
