@@ -114,7 +114,7 @@ def write_article(site: pathlib.Path, post: dict, all_posts=None):
 {_header()}
 <main class="article"><div class="wrap">
 <nav class="crumb"><a href="/">Blog</a> › <span>{html.escape(post['city'])}</span></nav>
-<div class="hero"><span class="hero-ico">❄️</span></div>
+<span class="pin">{html.escape(post['city'])}, {C.STATE}</span>
 <h1>{html.escape(post['title'])}</h1>
 <p class="byline">By {C.BIZ_SHORT} · {d} · Serving {html.escape(post['city'])}, {C.STATE}</p>
 <article class="body">{post['body_html']}</article>
@@ -132,10 +132,10 @@ def write_index(site: pathlib.Path, posts: list):
     cards = ""
     for p in posts:
         cards += f"""<a class="card" href="/posts/{p['slug']}.html">
-<div class="card-ico">❄️</div>
-<div class="card-body"><h2>{html.escape(p['title'])}</h2>
+<span class="card-city">{html.escape(p['city'])}, {C.STATE}</span>
+<h2>{html.escape(p['title'])}</h2>
 <p>{html.escape(p['meta'])}</p>
-<span class="card-meta">{html.escape(p['city'])}, {C.STATE} · {p['date']}</span></div></a>"""
+<span class="card-read">Read article &#8594;</span></a>"""
     if not cards:
         cards = "<p>New articles coming soon.</p>"
     desc = f"Practical AC & heating tips for {C.REGION} homeowners from {C.BIZ_NAME}."
@@ -168,27 +168,28 @@ def write_embed(site: pathlib.Path, posts: list, n: int = 6):
     cards = ""
     for p in posts[:n]:
         cards += f"""<a class="ec" href="{C.BLOG_URL}/posts/{p['slug']}.html" target="_blank" rel="noopener">
-<div class="eic">&#10052;&#65039;</div>
-<div class="etx"><h3>{html.escape(p['title'])}</h3>
+<span class="ecity">{html.escape(p['city'])}, {C.STATE}</span>
+<h3>{html.escape(p['title'])}</h3>
 <p>{html.escape(p['meta'])}</p>
-<span>{html.escape(p['city'])}, {C.STATE}</span></div></a>"""
+<span class="eread">Read article &#8594;</span></a>"""
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><style>
-:root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK}}}
+:root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK};--accent:{C.BRAND_ACCENT}}}
 *{{box-sizing:border-box}}html,body{{margin:0;background:transparent}}
 body{{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1a2233}}
-.eh{{font-size:22px;font-weight:800;color:var(--dark);margin:4px 0 4px}}
-.esub{{color:#5a6b82;font-size:15px;margin:0 0 16px}}
-.eg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}}
-.ec{{display:block;background:#fff;border:1px solid #e2eaf3;border-radius:12px;overflow:hidden;
+.eh{{font-size:23px;font-weight:800;color:var(--dark);margin:4px 0 4px}}
+.esub{{color:#5a6b82;font-size:15px;margin:0 0 18px}}
+.eg{{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}}
+.ec{{display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;
+border-top:3px solid var(--accent);border-radius:10px;padding:16px 18px 14px;
 text-decoration:none;color:inherit;transition:.15s}}
-.ec:hover{{box-shadow:0 6px 18px rgba(10,60,120,.12);transform:translateY(-2px)}}
-.eic{{height:70px;background:linear-gradient(135deg,var(--blue),var(--dark));display:flex;
-align-items:center;justify-content:center;font-size:30px}}
-.etx{{padding:12px 14px}}.etx h3{{margin:0 0 6px;font-size:16px;line-height:1.3;color:var(--dark)}}
-.etx p{{margin:0 0 8px;font-size:13px;color:#5a6b82;line-height:1.45}}
-.etx span{{font-size:12px;color:#8091a6}}
-.eall{{display:inline-block;margin-top:16px;color:var(--blue);font-weight:700;text-decoration:none;font-size:15px}}
+.ec:hover{{box-shadow:0 8px 22px rgba(10,60,120,.10);border-color:#cfe0f5;transform:translateY(-2px)}}
+.ecity{{display:inline-block;align-self:flex-start;background:#eaf1fb;color:var(--blue);
+font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:10px}}
+.ec h3{{margin:0 0 8px;font-size:16px;line-height:1.35;color:var(--dark)}}
+.ec p{{margin:0 0 14px;font-size:13.5px;color:#5a6b82;line-height:1.5;flex:1}}
+.eread{{font-size:13.5px;font-weight:700;color:var(--blue)}}
+.eall{{display:inline-block;margin-top:18px;color:var(--blue);font-weight:700;text-decoration:none;font-size:15px}}
 </style></head><body>
 <div class="eh">HVAC Tips &amp; Advice for {C.REGION}</div>
 <p class="esub">Straight, useful advice from the licensed team at {C.BIZ_NAME}.</p>
@@ -221,9 +222,8 @@ header.site .wrap{{display:flex;align-items:center;justify-content:space-between
 .callbtn.big{{display:inline-block;font-size:18px;padding:14px 22px;margin-top:6px}}
 main{{padding:26px 0 10px}}
 .crumb{{font-size:13px;color:#6b7a90;margin-bottom:14px}}
-.hero{{height:150px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--dark));
-display:flex;align-items:center;justify-content:center;margin-bottom:20px}}
-.hero-ico{{font-size:60px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}}
+.pin{{display:inline-block;background:#eaf1fb;color:var(--blue);font-size:13px;font-weight:600;
+padding:4px 12px;border-radius:20px;margin-bottom:12px}}
 h1{{font-size:30px;line-height:1.25;margin:6px 0 8px}}
 .byline{{color:#6b7a90;font-size:14px;margin:0 0 22px}}
 .body h2{{font-size:22px;margin:28px 0 10px}}.body h3{{font-size:18px;margin:20px 0 8px}}
@@ -238,17 +238,17 @@ border-radius:12px;padding:22px;margin:32px 0}}
 .related ul{{list-style:none;padding:0;margin:0}}
 .related li{{padding:10px 0;border-bottom:1px solid #e2eaf3;font-size:17px}}
 .intro h1{{margin-bottom:6px}}.intro p{{color:#4a5a70;font-size:17px;margin-top:0}}
-.grid{{display:grid;gap:16px;margin:24px 0}}
-.card{{display:flex;gap:16px;background:#fff;border:1px solid #e2eaf3;border-radius:14px;
-overflow:hidden;color:inherit}}
-.card:hover{{text-decoration:none;box-shadow:0 6px 20px rgba(10,60,120,.10);transform:translateY(-1px);transition:.15s}}
-.card-ico{{flex:0 0 84px;background:linear-gradient(135deg,var(--blue),var(--dark));
-display:flex;align-items:center;justify-content:center;font-size:34px}}
-.card-body{{padding:16px 18px}}.card-body h2{{margin:0 0 6px;font-size:19px;color:var(--dark)}}
-.card-body p{{margin:0 0 8px;color:#4a5a70;font-size:15px}}
-.card-meta{{font-size:13px;color:#8091a6}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin:24px 0}}
+.card{{display:flex;flex-direction:column;background:#fff;border:1px solid #e6ebf2;
+border-top:3px solid var(--accent);border-radius:10px;padding:16px 18px 14px;color:inherit;transition:.15s}}
+.card:hover{{text-decoration:none;box-shadow:0 8px 22px rgba(10,60,120,.10);border-color:#cfe0f5;transform:translateY(-2px)}}
+.card-city{{display:inline-block;align-self:flex-start;background:#eaf1fb;color:var(--blue);
+font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;margin-bottom:10px}}
+.card h2{{margin:0 0 8px;font-size:17px;line-height:1.35;color:var(--dark)}}
+.card p{{margin:0 0 14px;color:#5a6b82;font-size:14px;line-height:1.5;flex:1}}
+.card-read{{font-size:13.5px;font-weight:700;color:var(--blue)}}
 footer.site{{background:var(--dark);color:#c7d6e8;margin-top:40px;padding:26px 0}}
 footer .cta{{font-size:16px}}footer a{{color:#8fc0ff}}
 footer .area{{font-size:14px;color:#9db8d8}}footer .mini{{font-size:13px;color:#7a93b3;margin-bottom:0}}
-@media(max-width:600px){{h1{{font-size:25px}}.card-ico{{flex-basis:64px;font-size:26px}}}}
+@media(max-width:600px){{h1{{font-size:25px}}}}
 """
