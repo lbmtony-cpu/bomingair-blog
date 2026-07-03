@@ -1,5 +1,36 @@
 [
   {
+    "slug": "hvac-service-call-riverside-june-2026",
+    "title": "Riverside HVAC Diagnostic Visit: Multimeter and Data Plate Checks",
+    "meta": "Riverside service call details: multimeter testing on rooftop unit, condenser inspection, and furnace data plate review. Why professional diagnostics matter in SoCal heat for Riverside, Corona, and Eastvale homeowners.",
+    "hero_alt": "HVAC unit with pipes and multimeter on rooftop during Riverside diagnostic visit",
+    "body_html": "<h2>Rooftop Multimeter Testing During the Service Call</h2><p>Technicians performed electrical diagnostics on the rooftop HVAC unit using a multimeter to measure voltage and continuity across key components. This step helps identify issues with wiring, capacitors, or controls without assuming failure points.</p><h2>Condenser Unit Inspection</h2><p>The outdoor condenser was examined for fan operation, coil condition, and overall assembly integrity. Visible coils and fan blades were checked for debris buildup or wear common in high-temperature environments like Riverside during June.</p><h2>Furnace Data Plate Review</h2><p>The furnace data plate was documented to confirm model numbers, specifications, and compatibility details. This information guides accurate assessment of system capacity and maintenance history.</p><h2>Why Professional Diagnostics Matter in SoCal Heat</h2><p>In areas such as Riverside, Corona, and Eastvale, extreme summer temperatures increase system stress. Homeowners should monitor for unusual noises, reduced airflow, or inconsistent cooling. Professional testing provides precise data rather than guesswork, supporting reliable performance. Contact BOMING Air Conditioning & Heating at 657-275-5855 for diagnostic services in your area.</p>",
+    "faq": [
+      {
+        "q": "What does multimeter testing reveal on an HVAC unit?",
+        "a": "It measures electrical values like voltage and continuity to locate faults in components during a diagnostic visit."
+      },
+      {
+        "q": "Why check the furnace data plate?",
+        "a": "It supplies model and specification details needed for proper system evaluation and maintenance planning."
+      }
+    ],
+    "social_fb": "Riverside diagnostic visit highlights multimeter testing and condenser checks—professional HVAC service matters in SoCal heat. Call 657-275-5855.",
+    "social_yelp": "Detailed Riverside HVAC service call: rooftop testing, condenser inspection, and data plate review. Honest diagnostics for local homeowners.",
+    "kind": "case",
+    "topic": "iCloud jobsite pipeline test - Riverside 2026-06-07",
+    "city": "Riverside",
+    "photos": [
+      "img/hvac-service-call-riverside-june-2026/01.jpg",
+      "img/hvac-service-call-riverside-june-2026/02.jpg",
+      "img/hvac-service-call-riverside-june-2026/03.jpg",
+      "img/hvac-service-call-riverside-june-2026/04.jpg",
+      "img/hvac-service-call-riverside-june-2026/05.jpg"
+    ],
+    "source": "icloud:2026-06-07-riverside",
+    "date": "2026-07-03"
+  },
+  {
     "slug": "why-ac-freezes-up-and-how-to-fix-it-yorba-linda",
     "title": "AC Repair in Yorba Linda: Why Your AC Freezes Up",
     "meta": "Discover causes of frozen AC units and prevention steps for Yorba Linda homeowners dealing with SoCal heat, dust, and Santa Ana winds.",
