@@ -9,6 +9,16 @@ MAIN_SITE  = "https://bomingair.com"
 YELP_URL   = "https://www.yelp.com/biz/boming-air-chino-hills"
 YELP_RATING = "5.0"
 YELP_COUNT  = 74
+FB_URL     = "https://www.facebook.com/profile.php?id=61555652286968"
+# profiles that are all the SAME business (entity-linking for AI/GEO)
+SAME_AS    = [YELP_URL, FB_URL]
+# services offered (for Service schema + llms.txt)
+SERVICES   = [
+    "AC repair", "AC installation and replacement", "Heat pump installation",
+    "Ductless mini-split installation", "Furnace and heating repair",
+    "Commercial HVAC service", "HVAC maintenance and tune-ups",
+    "Refrigerant leak repair", "Ductwork service",
+]
 BLOG_URL   = "https://blog.bomingair.com"          # GitHub Pages custom domain
 CITY_BASE  = "Chino Hills"
 REGION     = "Southern California"
