@@ -18,10 +18,11 @@ main{padding:26px 0 10px}
 .crumb{font-size:13px;color:#6b7a90;margin-bottom:14px}
 .pin{display:inline-block;background:#eaf1fb;color:var(--blue);font-size:13px;font-weight:600;
 padding:4px 12px;border-radius:20px;margin-bottom:12px}
-.hero-img{width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:14px;margin-bottom:18px;display:block}
+.hero-img{width:100%;max-height:540px;object-fit:contain;background:#eef2f7;
+border-radius:14px;margin-bottom:18px;display:block}
 .gallery{margin:30px 0}.gallery h2{font-size:20px}
 .gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-.gg img{width:100%;height:180px;object-fit:cover;border-radius:8px;display:block}
+.gg img{width:100%;height:230px;object-fit:contain;background:#eef2f7;border-radius:8px;display:block}
 h1{font-size:30px;line-height:1.25;margin:6px 0 8px}
 .byline{color:#6b7a90;font-size:14px;margin:0 0 22px}
 .body h2{font-size:22px;margin:28px 0 10px}.body h3{font-size:18px;margin:20px 0 8px}
