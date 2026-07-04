@@ -7,7 +7,7 @@ No LLM needed. Resumable via gallery.json.
 """
 import os, re, sys, io, json, html, pathlib, urllib.parse
 import requests
-from PIL import Image
+from PIL import Image, ImageOps
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config as C
@@ -59,7 +59,7 @@ def main():
                 print(f"[skip no-img] {u}")
                 continue
             raw = requests.get(img, headers={"User-Agent": UA}, timeout=40).content
-            im = Image.open(io.BytesIO(raw)).convert("RGB")
+            im = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
             im.thumbnail((640, 640))
             n = len(items) + 1
             fn = f"{n:03d}.jpg"

@@ -15,7 +15,7 @@ Usage:
 """
 import os, re, sys, io, json, html, time, datetime, pathlib, urllib.parse
 import requests
-from PIL import Image
+from PIL import Image, ImageOps
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import config as C
@@ -92,7 +92,7 @@ def fetch_photos(imgs, slug):
     for i, u in enumerate(imgs, 1):
         try:
             raw = requests.get(u, headers={"User-Agent": UA}, timeout=40).content
-            im = Image.open(io.BytesIO(raw)).convert("RGB")
+            im = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
             im.thumbnail((1600, 1600))
             fn = outdir / f"{i:02d}.jpg"
             im.save(fn, "JPEG", quality=82, optimize=True)
