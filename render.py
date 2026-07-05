@@ -310,6 +310,8 @@ def write_static(site: pathlib.Path):
     if getattr(C, "GSC_FILE", ""):      # Google Search Console verification file
         (site / C.GSC_FILE).write_text(
             f"google-site-verification: {C.GSC_FILE}\n", encoding="utf-8")
+    if getattr(C, "INDEXNOW_KEY", ""):  # IndexNow ownership key file
+        (site / f"{C.INDEXNOW_KEY}.txt").write_text(C.INDEXNOW_KEY, encoding="utf-8")
 
 
 CSS = f""":root{{--blue:{C.BRAND_BLUE};--dark:{C.BRAND_DARK};--accent:{C.BRAND_ACCENT}}}

@@ -29,6 +29,8 @@ ZIP        = "91709"
 # Google Search Console — HTML-file verification (filename Google assigned)
 GSC_VERIFY = ""
 GSC_FILE = "googlea05971f2f403f6f1.html"
+# IndexNow — instant URL submission to Bing/Yandex (powers ChatGPT Search & Copilot). No login.
+INDEXNOW_KEY = "fc8ffec0a5fde92d11e2fe0830ad6be0"
 
 BRAND_BLUE   = "#0A5CB8"
 BRAND_DARK   = "#0b2340"

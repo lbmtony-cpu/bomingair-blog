@@ -204,6 +204,12 @@ def main():
     fb_msg = post["social_fb"] or f"{post['title']} — {post['meta']}"
     post_to_facebook(f"{C.BLOG_URL}/posts/{slug}.html", fb_msg)
 
+    try:                        # ping Bing/Yandex (ChatGPT Search, Copilot) — no login
+        import indexnow
+        indexnow.submit([f"{C.BLOG_URL}/posts/{slug}.html", f"{C.BLOG_URL}/"])
+    except Exception as e:
+        print(f"[indexnow] skipped: {e}")
+
 
 if __name__ == "__main__":
     main()
