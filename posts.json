@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hvac-anaheim-hills-2026-07-09",
+    "title": "Lennox HVAC Diagnostics Completed in Anaheim Hills",
+    "meta": "Lennox furnace and R410A AC diagnostics performed in Anaheim Hills using manifold gauges and diagnostic codes for Southern California homeowners.",
+    "hero_alt": "HVAC manifold gauges on outdoor AC unit valves showing R410A pressures next to Lennox furnace spec label",
+    "body_html": "<h2>System Assessment in Anaheim Hills</h2><p>Technicians connected manifold gauges directly to the outdoor AC unit service valves to evaluate refrigerant performance. Readings confirmed R410A pressures and corresponding temperatures, allowing verification of charge levels and system efficiency during peak summer conditions typical in Anaheim Hills.</p><h2>Refrigerant Pressure Verification</h2><p>The manifold gauge display provided precise R410A pressure and temperature data. This step identifies potential issues such as low charge or restrictions before they lead to compressor strain, which is especially relevant for SoCal homes facing extended heat waves and high cooling demand.</p><h2>Furnace Diagnostics and Specifications</h2><p>The Lennox furnace diagnostic codes list was reviewed alongside the technical spec label on the unit. This process confirms proper operation of safety controls and heating components, ensuring the dual-fuel system remains reliable when temperatures drop in winter months.</p><h2>Benefits for Southern California Homeowners</h2><p>Regular diagnostics on Lennox equipment help maintain energy efficiency and prevent unexpected breakdowns in Anaheim Hills and surrounding areas. Accurate R410A checks and code analysis deliver peace of mind by confirming the system meets manufacturer specifications. Homeowners gain extended equipment life and consistent comfort without unnecessary repairs. For professional HVAC service in your area, contact BOMING Air Conditioning & Heating at 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "Why check R410A pressures on an AC unit?",
+        "a": "Manifold gauge readings confirm proper refrigerant levels and temperatures, protecting the compressor and maintaining cooling efficiency in hot Anaheim Hills summers."
+      },
+      {
+        "q": "What do Lennox diagnostic codes reveal?",
+        "a": "The codes list identifies specific furnace issues, allowing targeted corrections while the spec label verifies model requirements for safe, reliable operation."
+      }
+    ],
+    "social_fb": "https://www.facebook.com/bominghvac",
+    "social_yelp": "https://www.yelp.com/biz/boming-air-conditioning-heating",
+    "kind": "case",
+    "topic": "jobsite 2026-07-09 Anaheim Hills",
+    "city": "Anaheim Hills",
+    "photos": [
+      "img/hvac-anaheim-hills-2026-07-09/01.jpg",
+      "img/hvac-anaheim-hills-2026-07-09/02.jpg",
+      "img/hvac-anaheim-hills-2026-07-09/03.jpg",
+      "img/hvac-anaheim-hills-2026-07-09/04.jpg"
+    ],
+    "source": "icloud:2026-07-09-anaheim-hills",
+    "date": "2026-07-09"
+  },
+  {
     "slug": "commercial-hvac-maintenance-businesses-walnut",
     "title": "Commercial HVAC Maintenance & AC Repair in Walnut",
     "meta": "Learn practical commercial HVAC maintenance tips for Walnut businesses facing hot dry summers and Santa Ana winds. Includes when to schedule AC repair in Walnut.",
