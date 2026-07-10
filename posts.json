@@ -57,7 +57,10 @@
     "kind": "guide",
     "topic": "Commercial HVAC maintenance: keeping your business cool and open",
     "city": "Walnut",
-    "date": "2026-07-09"
+    "date": "2026-07-09",
+    "photos": [
+      "stock/007.jpg"
+    ]
   },
   {
     "slug": "emergency-ac-repair-heat-wave-eastvale",
@@ -88,7 +91,10 @@
     "kind": "service",
     "topic": "Emergency AC repair in Eastvale during a heat wave",
     "city": "Eastvale",
-    "date": "2026-07-08"
+    "date": "2026-07-08",
+    "photos": [
+      "stock/018.jpg"
+    ]
   },
   {
     "slug": "choosing-hvac-contractor-what-to-look-for-pomona",
@@ -119,7 +125,10 @@
     "kind": "service",
     "topic": "Choosing an HVAC contractor in Pomona: what to look for",
     "city": "Pomona",
-    "date": "2026-07-07"
+    "date": "2026-07-07",
+    "photos": [
+      "stock/054.jpg"
+    ]
   },
   {
     "slug": "choosing-hvac-contractor-what-to-look-for-walnut",
@@ -150,7 +159,10 @@
     "kind": "service",
     "topic": "Choosing an HVAC contractor in Walnut: what to look for",
     "city": "Walnut",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "photos": [
+      "stock/001.jpg"
+    ]
   },
   {
     "slug": "why-ac-freezes-up-and-how-to-stop-it-eastvale",
@@ -181,7 +193,10 @@
     "kind": "guide",
     "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
     "city": "Eastvale",
-    "date": "2026-07-05"
+    "date": "2026-07-05",
+    "photos": [
+      "stock/051.jpg"
+    ]
   },
   {
     "slug": "ac-blowing-warm-air-what-it-means-chino",
@@ -212,7 +227,10 @@
     "kind": "service",
     "topic": "AC blowing warm air in Chino: what it means",
     "city": "Chino",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "photos": [
+      "stock/015.jpg"
+    ]
   },
   {
     "slug": "hvac-service-call-riverside-june-2026",
@@ -273,7 +291,10 @@
     "kind": "guide",
     "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
     "city": "Yorba Linda",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "photos": [
+      "stock/004.jpg"
+    ]
   },
   {
     "slug": "ac-installation-replacement-homeowners-guide-corona",
@@ -304,7 +325,10 @@
     "kind": "service",
     "topic": "AC installation and replacement in Corona: a homeowner's guide",
     "city": "Corona",
-    "date": "2026-07-02"
+    "date": "2026-07-02",
+    "photos": [
+      "stock/013.jpg"
+    ]
   },
   {
     "slug": "ac-repair-vs-replacement-decision-norco",
@@ -335,7 +359,10 @@
     "kind": "guide",
     "topic": "AC repair vs. replacement: how to decide when your system fails",
     "city": "Norco",
-    "date": "2026-07-02"
+    "date": "2026-07-02",
+    "photos": [
+      "stock/011.jpg"
+    ]
   },
   {
     "slug": "heat-pump-vs-traditional-ac-socal-home-pomona",
@@ -365,7 +392,10 @@
     "social_yelp": "Neighbors in Pomona often ask about switching from old ACs to heat pumps. This short article explains when each makes sense given our dry heat and older housing stock. No sales pitch, just practical local info worth reading before you decide.",
     "topic": "Heat pump vs. traditional AC: which is right for a SoCal home",
     "city": "Pomona",
-    "date": "2026-07-02"
+    "date": "2026-07-02",
+    "photos": [
+      "stock/027.jpg"
+    ]
   },
   {
     "slug": "installation-of-5-ton-bosch-heat-pump-system",
@@ -2101,7 +2131,10 @@
     "kind": "guide",
     "topic": "Emergency no-cool during a heat wave: what to check before you call",
     "city": "Corona",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/044.jpg"
+    ]
   },
   {
     "slug": "choosing-hvac-contractor-what-to-look-for-rowland-heights",
@@ -2132,7 +2165,10 @@
     "kind": "service",
     "topic": "Choosing an HVAC contractor in Rowland Heights: what to look for",
     "city": "Rowland Heights",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/046.jpg"
+    ]
   },
   {
     "slug": "ac-maintenance-and-tune-ups-why-they-pay-off-walnut",
@@ -2163,7 +2199,10 @@
     "kind": "service",
     "topic": "AC maintenance and tune-ups in Walnut: why they pay off",
     "city": "Walnut",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/040.jpg"
+    ]
   },
   {
     "slug": "ac-not-cooling-common-causes-fixes-chino",
@@ -2194,7 +2233,10 @@
     "kind": "service",
     "topic": "AC not cooling in Chino? Common causes and fixes",
     "city": "Chino",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/036.jpg"
+    ]
   },
   {
     "slug": "smart-thermostats-cutting-cooling-costs-pomona",
@@ -2225,7 +2267,10 @@
     "kind": "guide",
     "topic": "Smart thermostats: are they worth it for cutting cooling costs",
     "city": "Pomona",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/026.jpg"
+    ]
   },
   {
     "slug": "how-often-to-service-ac-southern-california-walnut",
@@ -2256,7 +2301,10 @@
     "kind": "guide",
     "topic": "How often should you service your AC in the Southern California climate",
     "city": "Walnut",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/031.jpg"
+    ]
   },
   {
     "slug": "why-ac-freezes-up-and-how-to-fix-it-walnut",
@@ -2287,7 +2335,10 @@
     "kind": "guide",
     "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
     "city": "Walnut",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/005.jpg"
+    ]
   },
   {
     "slug": "ac-installation-replacement-homeowners-guide-chino",
@@ -2318,7 +2369,10 @@
     "kind": "service",
     "topic": "AC installation and replacement in Chino: a homeowner's guide",
     "city": "Chino",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/010.jpg"
+    ]
   },
   {
     "slug": "leaky-dirty-ductwork-wastes-cooling-raises-bills-corona",
@@ -2348,7 +2402,10 @@
     "social_yelp": "Neighbors in Corona and Riverside—ever notice one room stays hot while the AC runs nonstop? Could be leaky ducts. Worth having checked before summer peaks again. BOMING does solid local work if you need a second opinion.",
     "topic": "Leaky or dirty ductwork: how it wastes cooling and raises bills",
     "city": "Corona",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "photos": [
+      "stock/017.jpg"
+    ]
   },
   {
     "slug": "5-signs-you-need-ac-repair-southern-california",
@@ -2371,7 +2428,9 @@
     "kind": "case",
     "topic": "5 Signs You Need AC Repair",
     "city": "Norco",
-    "photos": [],
+    "photos": [
+      "stock/049.jpg"
+    ],
     "source": "https://bomingair.com/f/5-signs-you-need-ac-repair",
     "date": "2026-07-01"
   },
@@ -2400,7 +2459,9 @@
     "kind": "case",
     "topic": "How to Do AC Maintenance in Los Angeles: Your Comprehensive Guide",
     "city": "Chino",
-    "photos": [],
+    "photos": [
+      "stock/033.jpg"
+    ],
     "source": "https://bomingair.com/f/how-to-do-ac-maintenance-in-los-angeles-your-comprehensive-guide",
     "date": "2026-07-01"
   },
@@ -2425,7 +2486,9 @@
     "kind": "case",
     "topic": "Mastering Air Conditioning Maintenance: Tips for Reliable Cooling",
     "city": "Rowland Heights",
-    "photos": [],
+    "photos": [
+      "stock/021.jpg"
+    ],
     "source": "https://bomingair.com/f/mastering-air-conditioning-maintenance-tips-for-reliable-cooling",
     "date": "2026-07-01"
   }
