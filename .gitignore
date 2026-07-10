@@ -3,3 +3,8 @@ __pycache__/
 preview.html
 latest_social.json
 .venv/
+
+_jobscan.json
+autopilot_log.txt
+_gd_urls.txt
+gallery.json
