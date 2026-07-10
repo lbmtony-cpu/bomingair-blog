@@ -87,7 +87,10 @@ def qc_photo(fp):
     v = jparse(grok([{"role": "user", "content": [
         {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
         {"type": "text", "text": 'Strict JSON only: {"shows":"<=14 words","is_hvac":true/false,'
-         '"privacy_risk":true/false (any face, house number, license plate, person, name, document)}'}]}],
+         '"privacy_risk":true/false}. Set privacy_risk TRUE ONLY if EITHER (a) the photo is primarily '
+         'a CLOSE-UP of a data plate / nameplate / spec sticker with a readable MODEL or SERIAL '
+         'number, OR (b) it shows a person/face, house number, license plate, name, or document. '
+         'Normal equipment photos with only small brand logos or warning stickers are NOT privacy.'}]}],
         temp=0.2))
     return v
 
@@ -185,9 +188,18 @@ def main():
                     indexnow.submit([f"{C.BLOG_URL}/", f"{C.BLOG_URL}/sitemap.xml"])
                 except Exception:
                     pass
-            return
+            break
         log(f"skip {c['date']} {c['city']}: only {len(good)} usable photos")
-    log("no publishable new jobsite this run")
+    else:
+        log("no publishable new jobsite this run")
+    # keep the daily-article photo pool topped up from fresh iCloud photos
+    try:
+        r = subprocess.run([PY, str(ROOT / "buildpool.py"), "60", "300"],
+                           cwd=ROOT, capture_output=True, text=True, timeout=1200)
+        log("pool refresh: " + (r.stdout.strip().splitlines() or ["(no output)"])[-1])
+        push_safe()
+    except Exception as e:
+        log(f"pool refresh err: {e}")
 
 
 if __name__ == "__main__":

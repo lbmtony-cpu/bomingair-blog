@@ -145,6 +145,24 @@ def post_to_facebook(link, message):
         print(f"[fb][ERR] {e}", file=sys.stderr)
 
 
+def assign_pool_photo(post, posts):
+    """Give a guide article a real HVAC hero from the stock pool, avoiding the
+    photos used by the most recent posts so heroes don't repeat back-to-back."""
+    if post.get("photos"):
+        return
+    pool_db = ROOT / "stock_pool.json"
+    if not pool_db.exists():
+        return
+    pool = json.loads(pool_db.read_text(encoding="utf-8"))
+    if not pool:
+        return
+    recent_used = {ph for p in posts[:20] for ph in (p.get("photos") or [])}
+    fresh = [x for x in pool if x["img"] not in recent_used] or pool
+    pick = random.choice(fresh)
+    post["photos"] = [pick["img"]]
+    post["hero_alt"] = post.get("hero_alt") or pick.get("alt", "")
+
+
 def _wc(html_str):
     return len(re.sub(r"<[^>]+>", " ", html_str).split())
 
@@ -182,6 +200,7 @@ def main():
         "city": city,
         "date": today,
     }
+    assign_pool_photo(post, posts)  # every guide article gets a real HVAC hero
     posts.insert(0, post)          # newest first
     save_posts(posts)
 

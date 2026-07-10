@@ -8,3 +8,6 @@ _jobscan.json
 autopilot_log.txt
 _gd_urls.txt
 gallery.json
+_scrub_report.json
+_confirmed_plates.json
+stock_pool.json
