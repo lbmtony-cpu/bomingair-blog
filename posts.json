@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hvac-chino-2026-07-10",
+    "title": "Chino HVAC Leak Detection and Sealing July 2026",
+    "meta": "BOMING technicians performed thermal imaging, pressure checks, and EasySeal application on a Chino AC system in July 2026.",
+    "hero_alt": "Thermal camera viewing ceiling air vent during Chino HVAC service",
+    "body_html": "<h2>Thermal Imaging of Ceiling Vent</h2><p>Technicians began by using a thermal camera to examine the ceiling air vent. This step identifies temperature variations that may indicate airflow or insulation issues common in Chino homes during peak summer heat.</p><h2>Refrigerant Pressure Diagnostics</h2><p>A Fieldpiece digital manifold gauge was connected to measure system pressures. Accurate readings help confirm whether refrigerant levels support efficient operation in Southern California’s high-temperature conditions.</p><h2>Application of EasySeal LS/UV</h2><p>The team introduced EasySeal LS/UV sealant near the AC unit. This product targets small leaks that can develop in older linesets exposed to local weather cycles.</p><h2>Outdoor Unit Inspection</h2><p>The outdoor HVAC unit was examined, including exposed wiring and the warning label. Visual checks ensure electrical connections remain secure and compliant with safety standards.</p><p>These steps matter for Chino and SoCal homeowners because summer temperatures often exceed 95°F, placing continuous demand on cooling equipment. Detecting and addressing minor leaks early helps maintain consistent performance and reduces unnecessary energy use. Proper diagnostics with specialized tools provide clarity on system condition without assumptions. Homeowners in the area benefit from focused service that aligns with local climate demands. For comparable HVAC support in Chino, call 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What tools were used during the Chino service?",
+        "a": "Thermal camera, Fieldpiece manifold gauge, and EasySeal LS/UV sealant were utilized."
+      },
+      {
+        "q": "Why is leak sealing relevant in Southern California?",
+        "a": "High summer temperatures increase system stress, making early leak detection helpful for ongoing efficiency."
+      }
+    ],
+    "social_fb": "https://facebook.com/bominghvac",
+    "social_yelp": "https://yelp.com/biz/boming-air-conditioning-heating",
+    "kind": "case",
+    "topic": "jobsite 2026-07-10 Chino",
+    "city": "Chino",
+    "photos": [
+      "img/hvac-chino-2026-07-10/01.jpg",
+      "img/hvac-chino-2026-07-10/02.jpg",
+      "img/hvac-chino-2026-07-10/03.jpg",
+      "img/hvac-chino-2026-07-10/04.jpg"
+    ],
+    "source": "icloud:2026-07-10-chino",
+    "date": "2026-07-13"
+  },
+  {
     "slug": "lower-summer-electric-bill-efficient-ac-montclair",
     "title": "AC Repair in Montclair Lowers Summer Electric Bills",
     "meta": "AC repair in Montclair helps homeowners cut summer electric bills in SoCal's hot dry climate. Practical steps for efficient cooling in Montclair and nearby areas.",
