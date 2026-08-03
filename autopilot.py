@@ -132,34 +132,48 @@ def publish(cluster, good):
             "social_yelp": art.get("social_yelp", ""), "kind": "case",
             "topic": f"jobsite {date} {city}", "city": city, "photos": photos,
             "source": f"icloud:{date}-{slugify(city)}", "date": datetime.date.today().isoformat()}
-    posts.insert(0, post)
-    POSTS_DB.write_text(json.dumps(posts, ensure_ascii=False, indent=2), encoding="utf-8")
+    log(f"prepared: {post['title']} ({len(photos)} photos)")
+    return post          # photos already on disk; commit_push handles the rest
+
+
+def render_all(posts):
     for p in posts:
         render.write_article(SITE, p, posts)
     render.write_index(SITE, posts); render.write_embed(SITE, posts)
     render.write_sitemap(SITE, posts); render.write_static(SITE)
-    log(f"PUBLISHED: {post['title']} ({len(photos)} photos)")
-    return post
 
 
-def push_safe():
-    git("add", "-A")
-    if not git("status", "--porcelain"):
-        return
-    git("commit", "-q", "-m", f"autopilot: jobsite case study {datetime.date.today()}")
-    for _ in range(4):
+def commit_push(post=None, msg="autopilot"):
+    """Robust: always rebuild on the LATEST remote, never merge/rebase (which can
+    conflict on generated files and wedge the repo — the 2026-07-27 failure)."""
+    for attempt in range(6):
+        subprocess.run(["git", "fetch", "-q", "origin"], cwd=ROOT)
+        git("reset", "--hard", "origin/main", check=False)  # clean base = remote truth
+        posts = json.loads(POSTS_DB.read_text(encoding="utf-8"))
+        if post:
+            if any(p.get("source") == post["source"] for p in posts):
+                log("already published upstream"); return True
+            posts.insert(0, post)
+            POSTS_DB.write_text(json.dumps(posts, ensure_ascii=False, indent=2), encoding="utf-8")
+        render_all(posts)
+        git("add", "-A")
+        if not git("status", "--porcelain"):
+            return True
+        git("commit", "-q", "-m", f"{msg} {datetime.date.today()}", check=False)
         r = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT,
                            capture_output=True, text=True)
         if r.returncode == 0:
-            return
-        git("pull", "--rebase", "origin", "main", check=False)
-    log("WARN: push failed after retries")
+            log(f"pushed (attempt {attempt+1})")
+            return True
+    log("WARN: push failed after 6 rebuild attempts")
+    return False
 
 
 def main():
     if not XAI_KEY:
         log("ABORT: no XAI key"); return
-    git("pull", "--ff-only", "origin", "main", check=False)
+    subprocess.run(["git", "fetch", "-q", "origin"], cwd=ROOT)
+    git("reset", "--hard", "origin/main", check=False)   # start from remote truth
     # hydrate + scan the recent library
     subprocess.run([PY, str(ROOT / "jobscan.py"), "150", "--hydrate"],
                    cwd=ROOT, capture_output=True, text=True)
@@ -181,8 +195,9 @@ def main():
                 good.append({"file": ph["file"], "shows": v.get("shows", "")})
         if len(good) >= 2:
             log(f"selected {c['date']} {c['city']} ({len(good)}/{c['count']} photos passed QC)")
-            if publish(c, good[:6]):
-                push_safe()
+            post = publish(c, good[:6])
+            if post and commit_push(post, msg="autopilot: jobsite"):
+                log(f"PUBLISHED: {post['title']}")
                 try:
                     import indexnow
                     indexnow.submit([f"{C.BLOG_URL}/", f"{C.BLOG_URL}/sitemap.xml"])
@@ -192,14 +207,32 @@ def main():
         log(f"skip {c['date']} {c['city']}: only {len(good)} usable photos")
     else:
         log("no publishable new jobsite this run")
-    # keep the daily-article photo pool topped up from fresh iCloud photos
+    # keep the daily-article photo pool topped up from fresh iCloud photos.
+    # Pool files (stock/, stock_pool.json) are DISJOINT from daily-cron files, so a
+    # rebase here can't conflict; if it somehow does, abort+reset so the repo is never wedged.
     try:
         r = subprocess.run([PY, str(ROOT / "buildpool.py"), "60", "300"],
                            cwd=ROOT, capture_output=True, text=True, timeout=1200)
         log("pool refresh: " + (r.stdout.strip().splitlines() or ["(no output)"])[-1])
-        push_safe()
+        git("add", "-A")
+        if git("status", "--porcelain"):
+            git("commit", "-q", "-m", f"autopilot: pool refresh {datetime.date.today()}", check=False)
+            for _ in range(3):
+                p = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT,
+                                   capture_output=True, text=True)
+                if p.returncode == 0:
+                    break
+                subprocess.run(["git", "fetch", "-q", "origin"], cwd=ROOT)
+                rb = subprocess.run(["git", "rebase", "origin/main"], cwd=ROOT,
+                                    capture_output=True, text=True)
+                if rb.returncode != 0:               # never leave a wedged repo
+                    subprocess.run(["git", "rebase", "--abort"], cwd=ROOT)
+                    git("reset", "--hard", "origin/main", check=False)
+                    log("pool push skipped (conflict); repo left clean")
+                    break
     except Exception as e:
         log(f"pool refresh err: {e}")
+        git("reset", "--hard", "origin/main", check=False)
 
 
 if __name__ == "__main__":
