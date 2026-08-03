@@ -35,11 +35,13 @@ def grok_vision(fp):
             json={"model": MODEL, "temperature": 0.2, "messages": [{"role": "user", "content": [
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
                 {"type": "text", "text": 'Strict JSON only: {"alt":"<=12 word alt text of the HVAC '
-                 'equipment shown","is_hvac":true/false,"privacy_risk":true/false}. Set privacy_risk '
-                 'TRUE ONLY if EITHER (a) the photo is primarily a CLOSE-UP of a data plate / '
-                 'nameplate / spec sticker with a readable MODEL or SERIAL number, OR (b) it shows a '
-                 'person/face, house number, license plate, name, or document. Normal equipment '
-                 'photos with only small brand logos or warning stickers are NOT privacy.'}]}]},
+                 'equipment shown","is_real_photo":true/false,"is_hvac":true/false,'
+                 '"privacy_risk":true/false}. is_real_photo=true ONLY if this is an actual PHOTOGRAPH '
+                 'of physical HVAC equipment or a real installation/worksite; FALSE for any screenshot, '
+                 'screen capture, document, spec sheet, brochure, invoice, paper, diagram, or text / '
+                 'model-number list. is_hvac=true if it depicts HVAC. privacy_risk=true if (a) a '
+                 'close-up data plate with readable model/serial, or (b) a person/face/house number/'
+                 'license plate/name/document.'}]}]},
             timeout=120)
         if r.status_code == 200:
             t = r.json()["choices"][0]["message"]["content"]
@@ -85,7 +87,7 @@ def main():
             v = grok_vision(p)
         except Exception as e:
             print("qc err", e); continue
-        if not v.get("is_hvac") or v.get("privacy_risk"):
+        if not v.get("is_real_photo") or not v.get("is_hvac") or v.get("privacy_risk"):
             continue
         n = len(pool) + 1
         fn = f"{n:03d}.jpg"
