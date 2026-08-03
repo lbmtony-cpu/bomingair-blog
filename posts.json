@@ -1,5 +1,37 @@
 [
   {
+    "slug": "hvac-moreno-valley-2026-07-30-4275",
+    "title": "Moreno Valley HVAC Service: Diagnostics and Maintenance",
+    "meta": "Moreno Valley HVAC case study showing diagnostics on an outdoor unit using manifold gauges, thermal imaging, and filter inspection for Southern California homeowners.",
+    "hero_alt": "HVAC unit on concrete platform in Moreno Valley with service tools nearby",
+    "body_html": "<h2>Service Call in Moreno Valley</h2><p>BOMING technicians performed a diagnostic visit on an outdoor HVAC air conditioner unit mounted on a concrete pad. The work included visual inspection of the system, checking the air filter condition, and connecting manifold gauges to measure refrigerant pressures with R410A.</p><h2>Tools Used on Site</h2><p>Technicians used a Fieldpiece SMAN digital manifold gauge to record system readings. A thermal camera was positioned near an HVAC vent to examine temperature distribution while wearing protective gloves. These steps help identify performance issues without assuming specific repairs or results.</p><h2>Relevance for Moreno Valley Homeowners</h2><p>Southern California summers place heavy demands on air conditioning systems. Regular checks of filters, refrigerant levels, and airflow support consistent operation and help manage energy use in hot inland areas like Moreno Valley. Dirty filters and inaccurate pressures can affect system efficiency over time.</p><h2>Value Delivered</h2><p>The visit provided documented readings and visual assessments using professional equipment. Homeowners receive clear information about their system's current state. For HVAC support in Moreno Valley or surrounding areas, contact BOMING Air Conditioning & Heating at 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What does an HVAC diagnostic visit include?",
+        "a": "It typically covers filter inspection, pressure readings with manifold gauges, and thermal imaging of vents."
+      },
+      {
+        "q": "Why is filter condition important in Moreno Valley?",
+        "a": "Dust and heat in the area can clog filters quickly, affecting airflow and system performance."
+      }
+    ],
+    "social_fb": "Share this Moreno Valley HVAC case study on Facebook",
+    "social_yelp": "Review our Moreno Valley service on Yelp",
+    "kind": "case",
+    "topic": "jobsite 2026-07-30 Moreno Valley",
+    "city": "Moreno Valley",
+    "photos": [
+      "img/hvac-moreno-valley-2026-07-30-4275/01.jpg",
+      "img/hvac-moreno-valley-2026-07-30-4275/02.jpg",
+      "img/hvac-moreno-valley-2026-07-30-4275/03.jpg",
+      "img/hvac-moreno-valley-2026-07-30-4275/04.jpg",
+      "img/hvac-moreno-valley-2026-07-30-4275/05.jpg",
+      "img/hvac-moreno-valley-2026-07-30-4275/06.jpg"
+    ],
+    "source": "icloud:2026-07-30-33.9089,-117.24275",
+    "date": "2026-08-03"
+  },
+  {
     "slug": "hvac-chino-hills-2026-08-02-5201",
     "title": "Chino Hills HVAC Furnace and AC Installation August 2026",
     "meta": "Case study of HVAC furnace and outdoor AC unit installation in Chino Hills, CA. See how proper setup supports efficiency and comfort for Southern California homes.",
