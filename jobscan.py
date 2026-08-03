@@ -97,7 +97,7 @@ def main():
              if p.suffix.lower() in (".jpg", ".jpeg", ".heic", ".png")]
     files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
 
-    clusters = {}
+    raw = {}
     scanned = skipped_ph = no_gps = 0
     for p in files:
         if scanned >= n:
@@ -113,21 +113,44 @@ def main():
         if lat is None or dt is None:
             no_gps += 1
             continue
-        city, d = nearest_city(lat, lon)
-        if not city:
-            continue
         day = dt.split(" ")[0].replace(":", "-")
-        key = f"{day}|{city}"
-        clusters.setdefault(key, []).append({"file": str(p), "time": dt, "mi": d})
+        raw.setdefault(day, []).append((lat, lon, str(p), dt))
 
-    out = [{"date": k.split("|")[0], "city": k.split("|")[1],
-            "count": len(v), "photos": v}
-           for k, v in sorted(clusters.items(), reverse=True)]
+    # Cluster by GPS proximity within each day: photos within ~180 m = ONE job at
+    # ONE address. Different addresses on the same day become separate case studies.
+    def meters(a, b, c, d):
+        return dist_mi(a, b, c, d) * 1609.34
+
+    out = []
+    for day, items in raw.items():
+        buckets = []
+        for lat, lon, f, dt in items:
+            hit = None
+            for bk in buckets:
+                if meters(lat, lon, bk["lat"], bk["lon"]) < 180:
+                    hit = bk
+                    break
+            if hit is None:
+                buckets.append({"lat": lat, "lon": lon, "photos": [{"file": f, "time": dt}]})
+            else:
+                hit["photos"].append({"file": f, "time": dt})
+                k = len(hit["photos"])
+                hit["lat"] = (hit["lat"] * (k - 1) + lat) / k     # running centroid
+                hit["lon"] = (hit["lon"] * (k - 1) + lon) / k
+        for bk in buckets:
+            city, _ = nearest_city(bk["lat"], bk["lon"])
+            if not city:
+                continue
+            out.append({"date": day, "city": city,
+                        "loc": f"{round(bk['lat'], 5)},{round(bk['lon'], 5)}",
+                        "count": len(bk["photos"]), "photos": bk["photos"]})
+
+    out.sort(key=lambda c: (c["date"], c["count"]), reverse=True)
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"scanned {scanned} hydrated files (skipped {skipped_ph} placeholders, {no_gps} w/o gps)")
-    print(f"clusters: {len(out)}")
-    for c in out[:15]:
-        print(f"  {c['date']}  {c['city']:18s} x{c['count']}")
+    print(f"clusters (by address): {len(out)}")
+    for c in out[:20]:
+        print(f"  {c['date']}  {c['city']:16s} @{c['loc']:20s} x{c['count']}")
 
 
 if __name__ == "__main__":

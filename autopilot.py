@@ -99,12 +99,18 @@ def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:75] or "job"
 
 
+def cluster_src(c):
+    return f"icloud:{c['date']}-{c.get('loc','')}"          # per-address, not per-city
+
+
 def publish(cluster, good):
     city, date = cluster["city"], cluster["date"]
-    slug = f"hvac-{slugify(city)}-{date}"
+    locid = re.sub(r"[^0-9]", "", cluster.get("loc", ""))[-4:] or "0000"
+    slug = f"hvac-{slugify(city)}-{date}-{locid}"           # unique per address
+    src = cluster_src(cluster)
     posts = json.loads(POSTS_DB.read_text(encoding="utf-8"))
-    if any(p.get("source") == f"icloud:{date}-{slugify(city)}" for p in posts):
-        log(f"already published {date} {city}"); return False
+    if any(p.get("source") == src for p in posts):
+        log(f"already published {date} {city} @{cluster.get('loc')}"); return False
     outdir = SITE / "img" / slug
     outdir.mkdir(parents=True, exist_ok=True)
     photos = []
@@ -131,7 +137,7 @@ def publish(cluster, good):
             "faq": art.get("faq", []), "social_fb": art.get("social_fb", ""),
             "social_yelp": art.get("social_yelp", ""), "kind": "case",
             "topic": f"jobsite {date} {city}", "city": city, "photos": photos,
-            "source": f"icloud:{date}-{slugify(city)}", "date": datetime.date.today().isoformat()}
+            "source": src, "date": datetime.date.today().isoformat()}
     log(f"prepared: {post['title']} ({len(photos)} photos)")
     return post          # photos already on disk; commit_push handles the rest
 
@@ -180,9 +186,8 @@ def main():
     clusters = json.loads((ROOT / "_jobscan.json").read_text(encoding="utf-8"))
     posts = json.loads(POSTS_DB.read_text(encoding="utf-8"))
     published = {p.get("source") for p in posts if p.get("source")}
-    # newest-first clusters with >=3 photos, not yet published
-    cands = [c for c in clusters if c["count"] >= 3
-             and f"icloud:{c['date']}-{slugify(c['city'])}" not in published]
+    # newest-first, one job per ADDRESS, >=3 photos, not yet published
+    cands = [c for c in clusters if c["count"] >= 3 and cluster_src(c) not in published]
     log(f"scan: {len(clusters)} clusters, {len(cands)} new candidates")
     for c in cands[:4]:                       # try up to 4 newest until one passes QC
         good = []
