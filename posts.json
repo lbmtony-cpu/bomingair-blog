@@ -1,5 +1,37 @@
 [
   {
+    "slug": "hvac-chino-hills-2026-08-02",
+    "title": "Chino Hills HVAC Inspection Completed August 2026",
+    "meta": "Case study of HVAC service performed in Chino Hills, CA, covering AC unit testing, furnace and water heater assessment for Southern California homeowners.",
+    "hero_alt": "Outdoor AC condenser unit on concrete pad beside Chino Hills building",
+    "body_html": "<h2>Site Assessment in Chino Hills</h2><p>Technicians arrived at a Chino Hills property in August 2026 to perform a thorough HVAC evaluation. Gauges were connected to the outdoor AC unit to check system pressures and refrigerant levels. The outdoor condenser sat on a concrete pad next to the building wall, allowing clear access for inspection.</p><h2>Equipment Located and Reviewed</h2><p>Inside the utility areas, the furnace and water heater were positioned together in the basement and a dedicated utility room. Ductwork was visible and connected to the furnace. An open door provided direct views of the furnace unit and associated ducting. All equipment appeared to be in standard residential configuration typical of Southern California homes.</p><h2>Why This Matters for SoCal Homeowners</h2><p>Chino Hills experiences hot summers and mild winters that place steady demand on both cooling and heating systems. Regular gauge checks on AC units help confirm proper operation before peak heat. Ensuring furnace and water heater setups remain accessible supports safe, efficient performance year-round. Visible duct connections allow technicians to note any obvious obstructions or wear without invasive work.</p><h2>Value Delivered Through Professional Service</h2><p>The visit documented the current condition of the AC, furnace, and water heater using non-invasive methods. Homeowners received clear information about equipment placement and access points. For reliable HVAC care in Chino Hills and surrounding areas, contact BOMING Air Conditioning & Heating at 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What equipment was checked during the Chino Hills visit?",
+        "a": "Technicians connected gauges to the outdoor AC unit and reviewed the furnace and water heater installations in the basement and utility room."
+      },
+      {
+        "q": "How often should Chino Hills homes schedule HVAC inspections?",
+        "a": "Annual checks before summer and winter help maintain system performance in Southern California's climate."
+      }
+    ],
+    "social_fb": "Photos from our recent Chino Hills HVAC inspection posted on Facebook",
+    "social_yelp": "Chino Hills service review shared on Yelp",
+    "kind": "case",
+    "topic": "jobsite 2026-08-02 Chino Hills",
+    "city": "Chino Hills",
+    "photos": [
+      "img/hvac-chino-hills-2026-08-02/01.jpg",
+      "img/hvac-chino-hills-2026-08-02/02.jpg",
+      "img/hvac-chino-hills-2026-08-02/03.jpg",
+      "img/hvac-chino-hills-2026-08-02/04.jpg",
+      "img/hvac-chino-hills-2026-08-02/05.jpg",
+      "img/hvac-chino-hills-2026-08-02/06.jpg"
+    ],
+    "source": "icloud:2026-08-02-chino-hills",
+    "date": "2026-08-02"
+  },
+  {
     "slug": "ac-installation-replacement-guide-diamond-bar",
     "title": "AC Installation in Diamond Bar: Homeowner's Guide",
     "meta": "Planning AC installation in Diamond Bar? This guide covers local climate challenges, steps, and when to call a pro for reliable cooling.",
