@@ -28,7 +28,10 @@
     "kind": "service",
     "topic": "AC installation and replacement in Diamond Bar: a homeowner's guide",
     "city": "Diamond Bar",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "photos": [
+      "stock/054.jpg"
+    ]
   },
   {
     "slug": "improving-indoor-air-quality-and-reducing-allergens-norco",
@@ -59,7 +62,10 @@
     "kind": "guide",
     "topic": "Improving indoor air quality and reducing allergens at home",
     "city": "Norco",
-    "date": "2026-08-01"
+    "date": "2026-08-01",
+    "photos": [
+      "stock/013.jpg"
+    ]
   },
   {
     "slug": "emergency-ac-repair-heat-wave-pomona",
@@ -90,7 +96,10 @@
     "kind": "service",
     "topic": "Emergency AC repair in Pomona during a heat wave",
     "city": "Pomona",
-    "date": "2026-07-31"
+    "date": "2026-07-31",
+    "photos": [
+      "stock/024.jpg"
+    ]
   },
   {
     "slug": "ductless-mini-split-installation-walnut-guide-walnut",
@@ -121,7 +130,10 @@
     "kind": "service",
     "topic": "Ductless mini-split installation in Walnut: is it right for you",
     "city": "Walnut",
-    "date": "2026-07-30"
+    "date": "2026-07-30",
+    "photos": [
+      "stock/037.jpg"
+    ]
   },
   {
     "slug": "ac-blowing-warm-air-what-it-means-brea",
@@ -152,7 +164,10 @@
     "kind": "service",
     "topic": "AC blowing warm air in Brea: what it means",
     "city": "Brea",
-    "date": "2026-07-29"
+    "date": "2026-07-29",
+    "photos": [
+      "stock/056.jpg"
+    ]
   },
   {
     "slug": "improve-indoor-air-quality-reduce-allergens-yorba-linda",
@@ -183,7 +198,10 @@
     "kind": "guide",
     "topic": "Improving indoor air quality and reducing allergens at home",
     "city": "Yorba Linda",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "photos": [
+      "stock/044.jpg"
+    ]
   },
   {
     "slug": "emergency-ac-repair-walnut-heat-wave-walnut",
@@ -214,7 +232,10 @@
     "kind": "service",
     "topic": "Emergency AC repair in Walnut during a heat wave",
     "city": "Walnut",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "photos": [
+      "stock/003.jpg"
+    ]
   },
   {
     "slug": "ac-installation-replacement-guide-walnut",
@@ -245,7 +266,10 @@
     "kind": "service",
     "topic": "AC installation and replacement in Walnut: a homeowner's guide",
     "city": "Walnut",
-    "date": "2026-07-26"
+    "date": "2026-07-26",
+    "photos": [
+      "stock/048.jpg"
+    ]
   },
   {
     "slug": "ac-repair-signs-and-what-to-expect-upland",
@@ -276,7 +300,10 @@
     "kind": "service",
     "topic": "AC repair in Upland: signs you need it and what to expect",
     "city": "Upland",
-    "date": "2026-07-25"
+    "date": "2026-07-25",
+    "photos": [
+      "stock/058.jpg"
+    ]
   },
   {
     "slug": "ac-freezes-up-causes-and-fixes-chino",
@@ -307,7 +334,10 @@
     "kind": "guide",
     "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
     "city": "Chino",
-    "date": "2026-07-24"
+    "date": "2026-07-24",
+    "photos": [
+      "stock/049.jpg"
+    ]
   },
   {
     "slug": "emergency-no-cool-heat-wave-checks-ontario",
@@ -338,7 +368,10 @@
     "kind": "guide",
     "topic": "Emergency no-cool during a heat wave: what to check before you call",
     "city": "Ontario",
-    "date": "2026-07-23"
+    "date": "2026-07-23",
+    "photos": [
+      "stock/012.jpg"
+    ]
   },
   {
     "slug": "r-410a-to-r-454b-refrigerant-change-montclair",
@@ -369,7 +402,10 @@
     "kind": "guide",
     "topic": "The R-410A to R-454B refrigerant change and what it means for you",
     "city": "Montclair",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "photos": [
+      "stock/050.jpg"
+    ]
   },
   {
     "slug": "why-ac-freezes-up-and-how-to-stop-it-rowland-heights",
@@ -400,7 +436,10 @@
     "kind": "guide",
     "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
     "city": "Rowland Heights",
-    "date": "2026-07-20"
+    "date": "2026-07-20",
+    "photos": [
+      "stock/035.jpg"
+    ]
   },
   {
     "slug": "sce-socalgas-hvac-rebates-financing-options-brea",
@@ -431,7 +470,10 @@
     "kind": "guide",
     "topic": "SCE and SoCalGas rebates and financing options for a new HVAC system",
     "city": "Brea",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "photos": [
+      "stock/001.jpg"
+    ]
   },
   {
     "slug": "ac-maintenance-tune-ups-pay-off-brea",
@@ -462,7 +504,10 @@
     "kind": "service",
     "topic": "AC maintenance and tune-ups in Brea: why they pay off",
     "city": "Brea",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "photos": [
+      "stock/009.jpg"
+    ]
   },
   {
     "slug": "commercial-hvac-service-walnut-businesses-walnut",
@@ -493,7 +538,10 @@
     "kind": "service",
     "topic": "Commercial HVAC service in Walnut for local businesses",
     "city": "Walnut",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "photos": [
+      "stock/023.jpg"
+    ]
   },
   {
     "slug": "sce-socalgas-rebates-financing-options-norco",
@@ -524,7 +572,10 @@
     "kind": "guide",
     "topic": "SCE and SoCalGas rebates and financing options for a new HVAC system",
     "city": "Norco",
-    "date": "2026-07-16"
+    "date": "2026-07-16",
+    "photos": [
+      "stock/033.jpg"
+    ]
   },
   {
     "slug": "ac-repair-norco-warm-air-norco",
@@ -555,7 +606,10 @@
     "kind": "service",
     "topic": "AC blowing warm air in Norco: what it means",
     "city": "Norco",
-    "date": "2026-07-15"
+    "date": "2026-07-15",
+    "photos": [
+      "stock/043.jpg"
+    ]
   },
   {
     "slug": "ac-blowing-warm-air-eastvale-causes-and-fixes-eastvale",
@@ -586,7 +640,10 @@
     "kind": "service",
     "topic": "AC blowing warm air in Eastvale: what it means",
     "city": "Eastvale",
-    "date": "2026-07-14"
+    "date": "2026-07-14",
+    "photos": [
+      "stock/008.jpg"
+    ]
   },
   {
     "slug": "ductless-mini-split-installation-corona-guide-corona",
@@ -617,7 +674,10 @@
     "kind": "service",
     "topic": "Ductless mini-split installation in Corona: is it right for you",
     "city": "Corona",
-    "date": "2026-07-13"
+    "date": "2026-07-13",
+    "photos": [
+      "stock/019.jpg"
+    ]
   },
   {
     "slug": "hvac-chino-2026-07-10",
@@ -712,7 +772,10 @@
     "kind": "service",
     "topic": "Ductless mini-split installation in Yorba Linda: is it right for you",
     "city": "Yorba Linda",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "photos": [
+      "stock/017.jpg"
+    ]
   },
   {
     "slug": "ac-repair-vs-replacement-decision-yorba-linda",
@@ -743,7 +806,10 @@
     "kind": "guide",
     "topic": "AC repair vs. replacement: how to decide when your system fails",
     "city": "Yorba Linda",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "photos": [
+      "stock/042.jpg"
+    ]
   },
   {
     "slug": "smart-thermostats-worth-it-cutting-cooling-costs-eastvale",
@@ -774,7 +840,10 @@
     "kind": "guide",
     "topic": "Smart thermostats: are they worth it for cutting cooling costs",
     "city": "Eastvale",
-    "date": "2026-07-10"
+    "date": "2026-07-10",
+    "photos": [
+      "stock/039.jpg"
+    ]
   },
   {
     "slug": "hvac-anaheim-hills-2026-07-09",
