@@ -1,5 +1,34 @@
 [
   {
+    "slug": "hvac-eastvale-2026-08-16-6254",
+    "title": "Eastvale AC Service: R-410A Check and 63.7°F Vent Verification",
+    "meta": "Eastvale AC service case study showing outdoor unit work, R-410A handling, and supply air at 63.7°F. Honest details for Southern California homeowners.",
+    "hero_alt": "Outdoor AC unit with pipes and tools, pink R-410A tank, and IR thermometer reading 63.7°F at ceiling vent",
+    "body_html": "<h2>Eastvale Service Call Details</h2><p>Technicians arrived at an Eastvale residence in August 2026 to address cooling performance. Visible work focused on the outdoor condensing unit, including inspection of refrigerant lines, fan grille, and associated tools. A pink R-410A recovery tank was positioned on site alongside standard HVAC equipment cases, indicating refrigerant management was part of the visit.</p><h2>Work Performed on Site</h2><p>Photos document connection of gauges and recovery equipment to the outdoor unit. The R-410A tank was used to handle refrigerant levels consistent with system requirements. An infrared thermometer was then used at an interior ceiling supply vent, confirming a reading of 63.7°F. These steps verify proper airflow and temperature delivery without altering unshown components or claiming unverified results.</p><h2>Relevance for Eastvale and SoCal Homeowners</h2><p>Eastvale summers place continuous demand on air conditioning systems. Maintaining correct refrigerant charge with R-410A helps equipment operate within designed pressures, reducing strain during peak heat. Supply air near 63–65°F at the vent supports even cooling throughout living spaces. Homeowners in Southern California benefit from documented temperature checks that confirm the system is delivering conditioned air effectively rather than running inefficiently.</p><h2>Value Delivered</h2><p>The service provided clear visual confirmation of outdoor unit condition, refrigerant handling, and measured vent temperature. This approach gives residents tangible evidence of system performance. For similar cooling verification in Eastvale or surrounding areas, contact BOMING Air Conditioning & Heating at 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What refrigerant was used during the Eastvale service?",
+        "a": "A pink R-410A tank is visible in the job photos, indicating R-410A was the refrigerant handled."
+      },
+      {
+        "q": "What temperature was recorded at the vent?",
+        "a": "The infrared thermometer showed 63.7°F at the ceiling supply vent."
+      }
+    ],
+    "social_fb": "https://facebook.com/bominghvac",
+    "social_yelp": "https://yelp.com/biz/boming-air-conditioning-heating",
+    "kind": "case",
+    "topic": "jobsite 2026-08-16 Eastvale",
+    "city": "Eastvale",
+    "photos": [
+      "img/hvac-eastvale-2026-08-16-6254/01.jpg",
+      "img/hvac-eastvale-2026-08-16-6254/02.jpg",
+      "img/hvac-eastvale-2026-08-16-6254/03.jpg"
+    ],
+    "source": "icloud:2026-08-16-33.96337,-117.6254",
+    "date": "2026-08-17"
+  },
+  {
     "slug": "hvac-chino-hills-2026-08-07-7159",
     "title": "Chino Hills HVAC Repair: Pipes, Boards & Thermal Diagnostics",
     "meta": "Chino Hills HVAC job in August 2026 involved PVC/copper piping, thermal camera diagnostics at vents, and circuit board repairs with colored wires. Learn what was done for SoCal homes.",
