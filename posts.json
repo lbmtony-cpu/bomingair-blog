@@ -1,5 +1,39 @@
 [
   {
+    "slug": "why-ac-freezes-up-and-how-to-stop-it-pomona",
+    "title": "AC Repair in Pomona: Why Your AC Freezes Up and How to Stop It",
+    "meta": "Discover common causes of frozen AC units in Pomona and practical steps to fix them. Helpful advice for SoCal homeowners dealing with local climate challenges.",
+    "hero_alt": "HVAC technician checking a frozen air conditioner unit outdoors",
+    "body_html": "<h2>Understanding Why AC Units Freeze in Pomona</h2><p>If you notice ice forming on your AC unit during the hot months, it is a clear sign something is wrong with airflow or refrigerant levels. AC repair in Pomona often addresses these exact issues for homeowners facing the intense desert-adjacent heat. The dry summers and frequent Santa Ana winds bring extra dust that clogs systems faster than in milder climates, leading to restricted airflow and eventual freezing. Nearby cities like Ontario and Claremont see similar problems because older housing stock struggles with the same high summer electric bills and constant heat load.</p><h2>Low Refrigerant Levels as a Primary Cause</h2><p>Low refrigerant is one of the most frequent reasons an AC freezes. Leaks develop over time from corrosion or poor installation, allowing the coolant to escape slowly. When refrigerant drops below the needed amount, the evaporator coil gets too cold and moisture in the air turns to ice. In Pomona's dusty environment, this problem compounds because homeowners may not notice reduced cooling until ice appears. Professional AC repair in Pomona can locate and seal leaks properly before recharging the system. Attempting to add refrigerant yourself is unsafe and often illegal without certification.</p><h2>Restricted Airflow from Dirty Filters and Coils</h2><p>Dirty air filters block airflow and cause the coil temperature to drop below freezing. Change filters every 30 to 60 days during peak summer use, especially with Santa Ana winds carrying extra dust into homes across Pomona, Rancho Cucamonga, and surrounding areas. Evaporator coils also collect grime that insulates the surface and prevents proper heat exchange. Cleaning coils requires the right tools and solutions; homeowners can vacuum accessible areas but should leave deep cleaning to technicians. Blocked return vents from furniture or closed doors create the same airflow restriction and ice buildup.</p><h2>Thermostat, Fan, and Sensor Issues</h2><p>A malfunctioning thermostat may keep the system running too long, dropping coil temperatures excessively. Blower fans that run slow or stop entirely fail to move warm air across the coil, allowing ice to form quickly. Sensors can drift out of calibration in older units common to Pomona's housing stock. These electrical or mechanical faults need diagnostic tools that most homeowners lack. Running the fan on auto instead of continuous can sometimes reduce ice risk, but persistent problems require AC repair in Pomona to inspect wiring and components.</p><h2>DIY Steps You Can Take Safely</h2><p>Turn off the AC at the thermostat and breaker to let ice melt completely before any inspection. Replace the air filter and ensure all supply and return vents are open and unobstructed. Check that the outdoor condenser is clear of debris, leaves, and overgrown plants. These simple actions often restore normal operation when the cause is basic airflow restriction. Avoid using sharp objects to chip ice, as this damages coils. If freezing returns within days, stop DIY efforts and schedule professional service.</p><h2>When to Call for AC Repair in Pomona</h2><p>Persistent ice after filter changes and vent checks points to refrigerant leaks, fan motor failure, or electrical issues best handled by licensed technicians. Systems in Claremont and Ontario face the same local climate stresses, so prompt service prevents higher repair costs later. A thorough inspection includes pressure testing, coil cleaning, and airflow measurements that ensure the unit runs efficiently through the rest of the hot season. Regular maintenance visits help catch small problems before they cause freezing or spike electric bills.</p><p>Contact BOMING Air Conditioning & Heating for reliable local service when your AC needs attention.</p>",
+    "faq": [
+      {
+        "q": "How quickly can ice on my AC melt after turning it off?",
+        "a": "Most units thaw within a few hours if airflow is restored, but leave the system off until completely clear to avoid damage."
+      },
+      {
+        "q": "Is low refrigerant dangerous for my family?",
+        "a": "Low refrigerant itself is not a direct health risk, but leaks indicate a problem that reduces cooling and can lead to compressor failure."
+      },
+      {
+        "q": "Can Santa Ana winds really affect my AC?",
+        "a": "Yes, the winds carry extra dust that clogs filters and coils faster, making freezing more common during and after wind events."
+      },
+      {
+        "q": "Should I run my AC fan constantly to prevent freezing?",
+        "a": "Continuous fan mode can help in some cases but wastes energy and is not a fix for underlying issues like low refrigerant."
+      }
+    ],
+    "social_fb": "Frozen AC units are common in Pomona during our hot, dusty summers. Learn the real causes and safe fixes in our latest guide. Share with neighbors in Ontario or Claremont who might be dealing with the same issue. Call BOMING at 657-275-5855 if ice keeps returning.",
+    "social_yelp": "Pomona homeowners: if your AC is icing up, check the filter first and keep vents clear. Our new article explains the local climate factors at play and when it's time for a pro. Helpful read for anyone in the area.",
+    "kind": "guide",
+    "topic": "Why your AC freezes up (ice on the unit) and how to stop it",
+    "city": "Pomona",
+    "date": "2026-08-25",
+    "photos": [
+      "stock/060.jpg"
+    ]
+  },
+  {
     "slug": "hvac-chino-2026-08-22-1146",
     "title": "Chino Ductless HVAC Install Supports Efficient Cooling",
     "meta": "BOMING completed a ductless HVAC project in Chino featuring two outdoor units on gravel and matching wall-mounted indoor units set at 73°F for reliable Southern California comfort.",
