@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hvac-eastvale-2026-08-30-8503",
+    "title": "Eastvale HVAC Electrical and Thermostat Diagnosis",
+    "meta": "Eastvale HVAC job used clamp meter and thermal imaging to inspect circuit board, relays, and ceiling vents plus Honeywell thermostat at 81F for reliable summer cooling.",
+    "hero_alt": "Open HVAC panel with circuit board, relays, wires and clamp meter next to thermal camera view of ceiling air vents and Honeywell thermostat showing 81F",
+    "body_html": "<h2>Electrical Component Inspection</h2><p>Technicians opened the HVAC panel to examine the circuit board, relays, and wiring. A clamp meter measured current flow on live circuits, confirming proper operation without guessing at hidden issues common in older Eastvale units.</p><h2>Thermal Imaging of Ceiling Vents</h2><p>Thermal camera scans of ceiling air vents revealed temperature patterns across the ductwork. This non-invasive check identified uneven airflow or insulation gaps that reduce cooling efficiency during peak summer heat in Southern California.</p><h2>Thermostat and System Check</h2><p>Two Honeywell thermostats were evaluated, one reading 81F with a note above it. Readings helped verify whether the system was maintaining setpoints or cycling incorrectly, a frequent concern for Eastvale homes facing prolonged high temperatures.</p><h2>Value for Eastvale Homeowners</h2><p>Accurate diagnostics prevent unnecessary part replacements and support consistent indoor comfort. Homeowners gain clearer understanding of system condition, lower risk of sudden breakdowns, and better energy performance in the region’s hot climate. Call BOMING Air Conditioning & Heating at 657-275-5855 to schedule an inspection.</p>",
+    "faq": [
+      {
+        "q": "What tools were used during the Eastvale visit?",
+        "a": "A clamp meter checked electrical current on the circuit board and relays while a thermal camera examined ceiling vent performance."
+      },
+      {
+        "q": "Why inspect the thermostat at 81F?",
+        "a": "The reading helped confirm whether the system was responding correctly to the setpoint in Eastvale’s summer conditions."
+      }
+    ],
+    "social_fb": "Eastvale HVAC panel inspection with clamp meter and thermal imaging completed August 2026.",
+    "social_yelp": "Professional HVAC diagnosis in Eastvale using circuit board testing and vent thermal scans.",
+    "kind": "case",
+    "topic": "jobsite 2026-08-30 Eastvale",
+    "city": "Eastvale",
+    "photos": [
+      "img/hvac-eastvale-2026-08-30-8503/01.jpg",
+      "img/hvac-eastvale-2026-08-30-8503/02.jpg",
+      "img/hvac-eastvale-2026-08-30-8503/03.jpg",
+      "img/hvac-eastvale-2026-08-30-8503/04.jpg"
+    ],
+    "source": "icloud:2026-08-30-34.01469,-117.58503",
+    "date": "2026-08-31"
+  },
+  {
     "slug": "commercial-hvac-service-yorba-linda-businesses-yorba-linda",
     "title": "Commercial HVAC Service in Yorba Linda for Businesses",
     "meta": "Practical guide to commercial HVAC service in Yorba Linda covering local climate issues, maintenance steps, and when to call pros for reliable cooling.",
