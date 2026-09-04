@@ -35,11 +35,11 @@ def grok_vision(fp):
             json={"model": MODEL, "temperature": 0.2, "messages": [{"role": "user", "content": [
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
                 {"type": "text", "text": 'Strict JSON only: {"alt":"<=12 word alt text of the HVAC '
-                 'equipment shown","is_real_photo":true/false,"is_hvac":true/false,'
+                 'equipment shown","is_real_photo":true/false,"is_hvac":true/false,"good_hero":true/false,'
                  '"privacy_risk":true/false}. is_real_photo=true ONLY if this is an actual PHOTOGRAPH '
                  'of physical HVAC equipment or a real installation/worksite; FALSE for any screenshot, '
                  'screen capture, document, spec sheet, brochure, invoice, paper, diagram, or text / '
-                 'model-number list. is_hvac=true if it depicts HVAC. privacy_risk=true if (a) a '
+                 'model-number list. is_hvac=true if it depicts HVAC. good_hero=true ONLY if the MAIN subject is installed/being-installed HVAC equipment (condenser, furnace, air handler, mini-split, rooftop unit, ductwork) or a clear worksite; FALSE for a handheld tool/thermal camera/gauge/meter/phone screen/small-part close-up. privacy_risk=true if (a) a '
                  'close-up data plate with readable model/serial, or (b) a person/face/house number/'
                  'license plate/name/document.'}]}]},
             timeout=120)
@@ -87,7 +87,7 @@ def main():
             v = grok_vision(p)
         except Exception as e:
             print("qc err", e); continue
-        if not v.get("is_real_photo") or not v.get("is_hvac") or v.get("privacy_risk"):
+        if not v.get("is_real_photo") or not v.get("is_hvac") or not v.get("good_hero") or v.get("privacy_risk"):
             continue
         n = len(pool) + 1
         fn = f"{n:03d}.jpg"
