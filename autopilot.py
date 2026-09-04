@@ -87,10 +87,13 @@ def qc_photo(fp):
     v = jparse(grok([{"role": "user", "content": [
         {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
         {"type": "text", "text": 'Strict JSON only: {"shows":"<=14 words","is_hvac":true/false,'
-         '"privacy_risk":true/false}. Set privacy_risk TRUE ONLY if EITHER (a) the photo is primarily '
-         'a CLOSE-UP of a data plate / nameplate / spec sticker with a readable MODEL or SERIAL '
-         'number, OR (b) it shows a person/face, house number, license plate, name, or document. '
-         'Normal equipment photos with only small brand logos or warning stickers are NOT privacy.'}]}],
+         '"new_equipment":true/false,"privacy_risk":true/false}. new_equipment=true if the photo shows '
+         'NEW / freshly-installed equipment (clean new units, new packaging, a new install in progress); '
+         'false if it shows OLD / existing / aged equipment being serviced or repaired. Set privacy_risk '
+         'TRUE ONLY if EITHER (a) the photo is primarily a CLOSE-UP of a data plate / nameplate / spec '
+         'sticker with a readable MODEL or SERIAL number, OR (b) it shows a person/face, house number, '
+         'license plate, name, or document. Normal equipment photos with only small brand logos or '
+         'warning stickers are NOT privacy.'}]}],
         temp=0.2))
     return v
 
@@ -120,14 +123,21 @@ def publish(cluster, good):
         im.save(outdir / f"{i:02d}.jpg", "JPEG", quality=82, optimize=True)
         photos.append(f"img/{slug}/{i:02d}.jpg")
     shows = "; ".join(g["shows"] for g in good)
+    # new equipment -> installation; old/existing -> repair/service (user's rule)
+    n_new = sum(1 for g in good if g.get("new_equipment"))
+    is_install = n_new >= (len(good) - n_new)      # majority new = installation
+    jobword = "installation of NEW equipment" if is_install else "repair/service of EXISTING equipment"
+    titleword = "Installation" if is_install else "Repair"
     mon = datetime.date.fromisoformat(date).strftime("%B %Y")
     prompt = (f'You write for {C.BIZ_NAME}, licensed HVAC contractor in {C.CITY_BASE} serving {C.REGION}.\n'
-              f'REAL job completed in {city}, CA ({mon}). The real photos show: {shows}.\n'
+              f'REAL {jobword}, completed in {city}, CA ({mon}). The real photos show: {shows}.\n'
+              f'This job is an {"INSTALLATION" if is_install else "AC/heating REPAIR or SERVICE"} — frame '
+              f'the whole article that way (do not call a repair an installation or vice-versa).\n'
               f'Write an honest 380-500 word case study of this {city} job. Do NOT invent customer '
               f'names, addresses, prices, or outcomes not visible. Explain what was done, why it '
               f'matters for {city}/SoCal homeowners, and the value delivered. 3-4 <h2> sections, '
-              f'soft CTA {C.PHONE}.\nReturn ONLY strict JSON: {{"title":"<=68c with {city}",'
-              f'"slug":"{slug}","meta_description":"<=155c with {city}","hero_alt":"...",'
+              f'soft CTA {C.PHONE}.\nReturn ONLY strict JSON: {{"title":"<=68c, include {city} and the '
+              f'word {titleword}","slug":"{slug}","meta_description":"<=155c with {city}","hero_alt":"...",'
               f'"body_html":"<h2>/<p>/<ul>/<li> only","faq":[{{"q":"...","a":"..."}},{{"q":"...","a":"..."}}],'
               f'"social_fb":"...","social_yelp":"..."}}')
     art = jparse(grok([{"role": "system", "content": "Expert HVAC writer. Strict JSON only."},
@@ -189,7 +199,12 @@ def main():
     # newest-first, one job per ADDRESS, >=3 photos, not yet published
     cands = [c for c in clusters if c["count"] >= 3 and cluster_src(c) not in published]
     log(f"scan: {len(clusters)} clusters, {len(cands)} new candidates")
-    for c in cands[:4]:                       # try up to 4 newest until one passes QC
+    MAX_PER_RUN = 6                           # publish every new job, capped so one run can't flood
+    done = 0
+    for c in cands:                           # newest-first; publish ALL new jobs, not just one
+        if done >= MAX_PER_RUN:
+            log(f"hit cap {MAX_PER_RUN}; remaining {len(cands)-cands.index(c)} will go next run")
+            break
         good = []
         for ph in c["photos"][:8]:
             try:
@@ -197,21 +212,25 @@ def main():
             except Exception as e:
                 log(f"qc err {e}"); continue
             if v.get("is_hvac") and not v.get("privacy_risk"):
-                good.append({"file": ph["file"], "shows": v.get("shows", "")})
+                good.append({"file": ph["file"], "shows": v.get("shows", ""),
+                             "new_equipment": v.get("new_equipment", False)})
         if len(good) >= 2:
             log(f"selected {c['date']} {c['city']} ({len(good)}/{c['count']} photos passed QC)")
             post = publish(c, good[:6])
             if post and commit_push(post, msg="autopilot: jobsite"):
                 log(f"PUBLISHED: {post['title']}")
+                done += 1
                 try:
                     import indexnow
                     indexnow.submit([f"{C.BLOG_URL}/", f"{C.BLOG_URL}/sitemap.xml"])
                 except Exception:
                     pass
-            break
-        log(f"skip {c['date']} {c['city']}: only {len(good)} usable photos")
-    else:
+        else:
+            log(f"skip {c['date']} {c['city']}: only {len(good)} usable photos")
+    if done == 0:
         log("no publishable new jobsite this run")
+    else:
+        log(f"published {done} job(s) this run")
     # keep the daily-article photo pool topped up from fresh iCloud photos.
     # Pool files (stock/, stock_pool.json) are DISJOINT from daily-cron files, so a
     # rebase here can't conflict; if it somehow does, abort+reset so the repo is never wedged.
