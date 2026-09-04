@@ -19,6 +19,7 @@ ROOT = pathlib.Path(__file__).parent
 SITE = ROOT / "site"
 POOL_DIR = SITE / "stock"
 POOL_DB = ROOT / "stock_pool.json"
+SRC_DB = ROOT / "_pool_src.json"  # gitignored: tracks processed iCloud paths (keeps manifest clean)
 LIB = pathlib.Path(r"E:\iCloudPhotos\Photos")
 XAI_KEY = (os.environ.get("XAI_API_KEY") or "").strip()
 MODEL = "grok-4.3"
@@ -63,7 +64,7 @@ def main():
     scan = int(sys.argv[2]) if len(sys.argv) > 2 else 500
     POOL_DIR.mkdir(parents=True, exist_ok=True)
     pool = json.loads(POOL_DB.read_text(encoding="utf-8")) if POOL_DB.exists() else []
-    done_src = {x["src"] for x in pool}
+    done_src = set(json.loads(SRC_DB.read_text(encoding="utf-8"))) if SRC_DB.exists() else set()
 
     files = [p for p in LIB.iterdir()
              if p.suffix.lower() in (".jpg", ".jpeg", ".heic")]
@@ -94,8 +95,10 @@ def main():
         im = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
         im.thumbnail((1400, 1400))
         im.save(POOL_DIR / fn, "JPEG", quality=82, optimize=True)
-        pool.append({"img": f"stock/{fn}", "alt": v.get("alt", "HVAC equipment"), "src": str(p)})
+        pool.append({"img": f"stock/{fn}", "alt": v.get("alt", "HVAC equipment")})
+        done_src.add(str(p))
         POOL_DB.write_text(json.dumps(pool, ensure_ascii=False, indent=1), encoding="utf-8")
+        SRC_DB.write_text(json.dumps(sorted(done_src)), encoding="utf-8")
         print(f"[{len(pool)}/{target}] {v.get('alt','')[:40]}")
 
     print(f"pool size: {len(pool)} (checked {checked})")
