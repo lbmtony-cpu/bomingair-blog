@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hvac-eastvale-2026-08-30-2614",
+    "title": "Eastvale AC Repair: Burnt Wiring and System Service",
+    "meta": "Eastvale AC repair case study showing thermal inspection, refrigerant service, and burnt wiring fix on existing HVAC equipment in Southern California.",
+    "hero_alt": "HVAC technician using thermal camera on wall vents during Eastvale AC repair",
+    "body_html": "<h2>Initial Diagnosis in Eastvale Home</h2><p>Technicians arrived to address performance issues on an existing AC and heating system. A thermal camera was used to inspect wall HVAC vents, revealing temperature inconsistencies that pointed to restricted airflow or underlying component stress common in Eastvale's hot summers.</p><h2>Electrical Repair on Outdoor Unit</h2><p>The outdoor unit showed clear signs of burnt wiring. Gauges manifold tools were connected to measure system pressures while the damaged wiring was repaired. This step restored safe electrical connections without replacing the entire unit, preventing potential shutdowns during peak cooling demand.</p><h2>Refrigerant System Service</h2><p>HVAC refrigerant scale and charging hoses were deployed to verify and adjust refrigerant levels. Proper charging ensures the system operates efficiently, reducing strain on the compressor and supporting consistent heating and cooling cycles throughout the year.</p><h2>Value for Southern California Homeowners</h2><p>Eastvale residents face intense heat that stresses aging equipment. Targeted repairs like these extend the life of existing systems, improve reliability, and help maintain indoor comfort without unnecessary replacements. Homeowners gain peace of mind knowing their AC and heating are serviced for local conditions. Call BOMING Air Conditioning & Heating at 657-275-5855 to schedule service on your current equipment.</p>",
+    "faq": [
+      {
+        "q": "What signs indicate an AC unit needs repair in Eastvale?",
+        "a": "Uneven temperatures, unusual noises, or visible wiring damage on the outdoor unit often signal the need for professional inspection and service."
+      },
+      {
+        "q": "How does thermal imaging help during HVAC repairs?",
+        "a": "It identifies hidden airflow or temperature issues inside vents that standard checks might miss, allowing precise repairs on existing systems."
+      }
+    ],
+    "social_fb": "Eastvale AC repair completed: thermal vent inspection, refrigerant service, and burnt wiring fix on existing outdoor unit. Serving SoCal homeowners. 657-275-5855",
+    "social_yelp": "Real Eastvale job: repaired damaged AC wiring and serviced refrigerant on existing equipment using gauges and thermal camera. Honest HVAC repair work.",
+    "kind": "case",
+    "topic": "jobsite 2026-08-30 Eastvale",
+    "city": "Eastvale",
+    "photos": [
+      "img/hvac-eastvale-2026-08-30-2614/01.jpg",
+      "img/hvac-eastvale-2026-08-30-2614/02.jpg",
+      "img/hvac-eastvale-2026-08-30-2614/03.jpg",
+      "img/hvac-eastvale-2026-08-30-2614/04.jpg"
+    ],
+    "source": "icloud:2026-08-30-33.96449,-117.62614",
+    "date": "2026-09-04"
+  },
+  {
     "slug": "hvac-chino-hills-2026-09-02-7548",
     "title": "Chino Hills HVAC Repair for Existing Condenser Units",
     "meta": "HVAC repair service performed on existing AC and heating equipment in Chino Hills, CA, restoring reliable performance for Southern California homeowners.",
