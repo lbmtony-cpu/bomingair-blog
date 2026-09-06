@@ -1,5 +1,34 @@
 [
   {
+    "slug": "hvac-eastvale-2026-09-05-8519",
+    "title": "Eastvale HVAC Repair: Thermostat and Capacitor Service",
+    "meta": "Eastvale HVAC repair completed in September 2026 using thermal imaging, capacitor replacement, and Honeywell thermostat upgrade for reliable AC and heating performance.",
+    "hero_alt": "Technician performing HVAC repair in Eastvale with thermal camera, new Honeywell thermostat, and old capacitor",
+    "body_html": "<h2>Thermal Imaging Diagnosis in Eastvale</h2><p>Technicians used a thermal camera to scan the ceiling air vent during this September 2026 service call. The imaging helped identify temperature inconsistencies around the existing HVAC equipment without requiring full system disassembly.</p><h2>Capacitor Replacement Service</h2><p>The old capacitor was removed and replaced near the furnace unit. This component supports motor startup and run functions in both cooling and heating modes, directly addressing common wear issues in Southern California homes exposed to high summer loads.</p><h2>Honeywell Thermostat Upgrade</h2><p>A new Honeywell thermostat was installed beside the previous unit. The upgrade provides improved control accuracy for existing AC and heating systems while maintaining compatibility with the current setup.</p><h2>Value for Eastvale Homeowners</h2><p>Eastvale residents face intense seasonal temperature swings that stress older HVAC components. Targeted repairs like these restore efficient operation, reduce unnecessary energy use, and extend equipment life without full replacement. Regular service calls help maintain consistent comfort in SoCal climates. Call 657-275-5855 to schedule an assessment of your existing system.</p>",
+    "faq": [
+      {
+        "q": "What does a thermal camera check during an HVAC repair?",
+        "a": "It scans vents and surrounding areas to detect temperature variations that indicate airflow or insulation issues around existing equipment."
+      },
+      {
+        "q": "Why replace a capacitor during service?",
+        "a": "Capacitors support motor operation in AC and heating units; visible wear on the old part prompted replacement to restore reliable function."
+      }
+    ],
+    "social_fb": "Eastvale HVAC repair completed with thermal scan, capacitor swap, and new Honeywell thermostat. See the real photos from our September 2026 service.",
+    "social_yelp": "Honest Eastvale repair: thermal imaging, old capacitor removal, and thermostat upgrade on existing HVAC equipment.",
+    "kind": "case",
+    "topic": "jobsite 2026-09-05 Eastvale",
+    "city": "Eastvale",
+    "photos": [
+      "img/hvac-eastvale-2026-09-05-8519/01.jpg",
+      "img/hvac-eastvale-2026-09-05-8519/02.jpg",
+      "img/hvac-eastvale-2026-09-05-8519/03.jpg"
+    ],
+    "source": "icloud:2026-09-05-34.01471,-117.58519",
+    "date": "2026-09-06"
+  },
+  {
     "slug": "sce-socalgas-hvac-rebates-financing-ontario",
     "title": "AC Repair in Ontario: SCE & SoCalGas HVAC Rebates",
     "meta": "Learn about SCE and SoCalGas rebates and financing for new HVAC systems if you need AC repair in Ontario. Practical steps for local homeowners in Southern California.",
