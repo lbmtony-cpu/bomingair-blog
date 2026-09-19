@@ -1,5 +1,39 @@
 [
   {
+    "slug": "ac-not-cooling-common-causes-fixes-pomona",
+    "title": "AC Repair in Pomona: Why Your AC Isn't Cooling",
+    "meta": "AC repair in Pomona starts with understanding common cooling problems. Local tips for homeowners in Pomona and nearby SoCal cities facing hot, dusty summers.",
+    "hero_alt": "Technician checking an outdoor AC condenser unit during a Southern California summer",
+    "body_html": "<h2>Why AC Repair in Pomona Is Often Needed in Summer</h2><p>AC repair in Pomona becomes a frequent call during the long, hot stretches that hit the Inland Empire. The area's desert-adjacent heat combines with dry air and occasional Santa Ana winds that carry extra dust, making it harder for systems to keep up. Older housing stock in many neighborhoods means units work harder, driving up summer electric bills for homeowners and small businesses alike.</p><h2>Start with the Simple Checks You Can Do</h2><p>Before anything else, look at your thermostat. Make sure it is set to cool and the temperature is below the current room reading. Replace the batteries if it is a battery model. Next, check the air filter. A clogged filter is one of the top reasons systems stop cooling properly. In Pomona's dusty conditions, filters often need changing every 30 to 45 days during peak summer rather than the usual 90 days.</p><p>If the filter is dirty, swap it out and wait 30 minutes to see if cooling returns. Also inspect the return vents for blockages from furniture or rugs. These steps solve many no-cool calls without a service visit.</p><h2>Condenser and Evaporator Coil Problems</h2><p>The outdoor condenser unit works hard in direct sun and collects dust blown in by Santa Ana winds. When the coils get coated, heat cannot escape and the system struggles or shuts down on high-pressure safety. Turn the power off at the breaker and gently rinse the coils with a garden hose on a mild day. Avoid pressure washers that can bend fins.</p><p>Inside, the evaporator coil above the furnace can ice over from low airflow or low refrigerant. If you see ice, turn the system to fan-only and let it thaw before restarting. Persistent icing usually points to a refrigerant leak or blower issue that requires a licensed technician.</p><h2>Electrical Components That Fail in the Heat</h2><p>Capacitors and contactors take a beating in high temperatures common around Pomona, Ontario, and Claremont. A failing capacitor may cause the outdoor fan or compressor to hum but not start. Contactors can pit and stick from years of cycling. These parts are inexpensive but require electrical knowledge and proper safety procedures to replace.</p><p>Never attempt capacitor work yourself if you are unsure; stored charge can cause injury. A quick voltage check with a multimeter tells a pro whether the component is within spec.</p><h2>Refrigerant Leaks and Low Charge</h2><p>Modern systems should not need regular refrigerant top-offs. Low charge usually means a leak at a fitting, valve, or coil. Adding refrigerant without finding and fixing the leak is illegal and only provides short-term relief. Technicians use electronic leak detectors and nitrogen pressure tests to locate the problem before any repair.</p><p>Signs include warm air from vents, ice on the indoor coil, and higher-than-normal electric bills. In Diamond Bar and surrounding areas, older R-22 systems are especially prone to leaks as they near end of life.</p><h2>When to Schedule AC Repair in Pomona</h2><p>If basic filter changes and thermostat checks do not restore cooling, or if you hear unusual noises, smell burning, or see water around the indoor unit, stop using the system and call a professional. Continuing to run a struggling unit can cause compressor damage that costs far more to replace.</p><p>Local technicians familiar with Pomona's housing stock and climate can diagnose issues quickly and recommend repairs that fit the home's age and duct layout. They also check for proper airflow, static pressure, and electrical draw that homeowners cannot measure safely.</p><p>Regular maintenance twice a year helps catch problems before the hottest weeks arrive. Keep trees and shrubs trimmed at least two feet from the outdoor unit and consider a shade screen if the condenser sits in full afternoon sun. These steps reduce strain during the long SoCal cooling season.</p>",
+    "faq": [
+      {
+        "q": "How often should I change my AC filter in Pomona?",
+        "a": "Every 30-45 days during summer because of dust from Santa Ana winds. Check monthly and replace sooner if the home has pets or construction nearby."
+      },
+      {
+        "q": "Can low refrigerant be fixed without replacing the whole system?",
+        "a": "Yes, if the leak is small and accessible. A technician will locate and repair the leak, then recharge the system to factory specifications."
+      },
+      {
+        "q": "Why does my AC run but blow warm air?",
+        "a": "Common causes include a dirty filter, frozen coil, failed capacitor, or low refrigerant. Start with the filter; if that does not help, schedule service."
+      },
+      {
+        "q": "Is it safe to rinse my own condenser coils?",
+        "a": "Yes, with the power off and using low-pressure water. Avoid bending fins or using harsh chemicals. Deep cleaning is best left to a pro with the right tools."
+      }
+    ],
+    "social_fb": "Pomona summers are no joke when your AC stops cooling. This quick guide covers the most common reasons and what you can safely check yourself before calling for help. Share with neighbors in Ontario or Claremont who might need it too. 📍 657-275-5855",
+    "social_yelp": "If your AC is running but the house stays warm, start with the filter and thermostat settings. The article explains when it's time to bring in a local tech familiar with older homes around Pomona. Helpful read for anyone dealing with high summer bills.",
+    "kind": "service",
+    "topic": "AC not cooling in Pomona? Common causes and fixes",
+    "city": "Pomona",
+    "date": "2026-09-19",
+    "photos": [
+      "stock/004.jpg"
+    ]
+  },
+  {
     "slug": "hvac-corona-2026-09-18-4007",
     "title": "Corona Installation: New Equipment with SIL-FOS 15",
     "meta": "New HVAC installation completed in Corona, CA using SIL-FOS 15 brazing rods for durable refrigerant line connections in Southern California homes.",
