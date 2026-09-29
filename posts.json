@@ -1,5 +1,39 @@
 [
   {
+    "slug": "choose-right-size-ac-system-home-brea",
+    "title": "AC Repair in Brea: Choosing the Right Size AC for Your Home",
+    "meta": "Learn how to pick the correct AC size for Brea homes facing hot dry summers and Santa Ana winds. Practical steps from local HVAC experts serving Brea, Fullerton and Yorba Linda.",
+    "hero_alt": "HVAC technician measuring airflow on a residential AC unit in a Southern California home",
+    "body_html": "<h2>Why the Right AC Size Matters in Brea's Climate</h2><p>AC repair in Brea often starts with a simple question: is the system the correct size for the house? Brea experiences hot, dry summers, occasional Santa Ana winds that push temperatures higher, and dust that clogs filters quickly. An oversized unit short-cycles, fails to remove humidity, and drives up electric bills. An undersized unit runs constantly yet never reaches the thermostat setting. Both problems show up regularly on service calls in Brea, Fullerton, and Placentia.</p><p>Older housing stock common in the area adds another layer. Many homes built before 1990 have poor insulation, single-pane windows, and ductwork that leaks. These factors change the cooling load even if square footage looks the same on paper.</p><h2>How Cooling Load Is Actually Calculated</h2><p>Professionals use a Manual J load calculation that accounts for insulation R-values, window orientation, roof color, number of occupants, and appliances. Square footage alone is not enough. A 2,000-square-foot home in Brea with west-facing windows and minimal attic insulation may need a larger system than the same size home in Yorba Linda with newer double-pane glass and R-38 insulation.</p><p>The calculation also factors in local design temperatures. Brea peaks around 95°F in summer with low humidity, so sensible heat removal is the priority, yet humidity spikes after rare rain can still matter. Skipping this step leads to the wrong equipment every time.</p><h2>Common Sizing Mistakes Homeowners Make</h2><p>Many residents replace their old unit with the same tonnage listed on the nameplate. That assumes the previous system was correct and that nothing in the house has changed. Additions, new windows, or even tree removal can alter the load dramatically.</p><p>Another frequent error is choosing the largest unit a budget allows. Bigger is not better when the goal is steady, efficient cooling. Oversized equipment also increases the chance of future AC repair in Brea because short cycling stresses compressors and capacitors.</p><ul><li>Trust only a load calculation performed on site.</li><li>Ignore online tonnage calculators that ask only for square feet.</li><li>Do not let price alone decide the tonnage.</li></ul><h2>Signs Your Current System Is the Wrong Size</h2><p>Short cycling, rooms that stay warmer than others, and high humidity indoors all point to sizing issues. High summer electric bills are another red flag, especially when the thermostat is set at 78°F yet the compressor runs nonstop. In Brea neighborhoods with mature trees and varying home ages, these symptoms appear often during the first real heat wave.</p><p>If you notice these patterns, schedule an evaluation before the next summer. A technician can measure actual airflow and static pressure to confirm whether the equipment matches the house.</p><h2>When to Call a Pro and What to Expect</h2><p>You can measure room dimensions and note insulation levels yourself, but accurate load calculations and duct assessments require tools and experience. AC repair in Brea companies that perform Manual J reports will give you a written cooling load in BTUs and recommend matched equipment. Expect them to inspect ducts for leaks and measure supply and return temperatures.</p><p>Once the right size is confirmed, proper installation matters as much as the equipment itself. Refrigerant lines must be sized correctly, the condensate drain must slope properly, and the thermostat should be placed away from direct sun. These details separate reliable performance from repeated service visits.</p><p>If your system is more than 12 years old or uses R-22 refrigerant, discuss replacement options during the same visit. Matching the new unit to the actual load often lowers operating costs immediately.</p><p>Contact BOMING Air Conditioning & Heating for a load calculation tailored to your Brea home.</p>",
+    "faq": [
+      {
+        "q": "How long does a proper AC sizing calculation take?",
+        "a": "An on-site Manual J load calculation usually takes one to two hours. The technician measures the home, checks insulation, windows, and ductwork, then runs the numbers."
+      },
+      {
+        "q": "Can I just replace my old AC with the same size?",
+        "a": "Only if nothing in the house has changed and the original system was correctly sized. Additions, window replacements, or insulation upgrades usually require a new calculation."
+      },
+      {
+        "q": "What happens if the AC is too big for the house?",
+        "a": "It short-cycles, leaves humidity in the air, and wears out faster. Homeowners in Brea often see higher repair frequency with oversized units."
+      },
+      {
+        "q": "Do nearby cities have different sizing needs?",
+        "a": "Fullerton and Yorba Linda homes face similar heat but may differ in age and insulation. A site visit accounts for those local differences."
+      }
+    ],
+    "social_fb": "Sizing your AC correctly saves money and comfort during Brea's hot summers. Our latest guide walks through real steps for local homes—no fluff, just practical advice. Read it here and stay cool! 📍 Serving Brea, Fullerton & Yorba Linda 657-275-5855",
+    "social_yelp": "Helpful read if you're in Brea or nearby and wondering why your AC never seems to keep up. The article explains how to figure out the right size without guesswork. Worth a few minutes before calling anyone.",
+    "kind": "guide",
+    "topic": "How to choose the right size AC system for your home",
+    "city": "Brea",
+    "date": "2026-09-29",
+    "photos": [
+      "stock/001.jpg"
+    ]
+  },
+  {
     "slug": "hvac-chino-hills-2026-09-28-6785",
     "title": "Chino Hills Furnace Control Board Repair",
     "meta": "Chino Hills HVAC repair resolved furnace control board tangled wires and fault codes for reliable AC and heating performance.",
