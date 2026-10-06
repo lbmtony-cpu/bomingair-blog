@@ -1,5 +1,39 @@
 [
   {
+    "slug": "ac-installation-replacement-guide-upland",
+    "title": "AC Installation in Upland: Homeowner's Guide",
+    "meta": "Practical guide to AC installation and replacement in Upland covering steps, climate challenges, and when to call pros for SoCal homes.",
+    "hero_alt": "HVAC technician installing new AC unit outdoors in residential yard",
+    "body_html": "<h2>Understanding Your AC Needs in Upland's Climate</h2><p>Hot dry summers, dust from nearby areas, and occasional Santa Ana winds put extra strain on cooling systems across Upland. Many homes here were built decades ago with older ductwork that leaks or lacks proper insulation, leading to high summer electric bills. AC installation and replacement in Upland often becomes necessary when units can no longer keep up with desert-adjacent heat that pushes into the 100s. Homeowners in nearby Rancho Cucamonga face similar issues with fine dust clogging filters faster than in milder coastal zones.</p><h2>When to Replace Instead of Repair</h2><p>If your system is over 12-15 years old and requires frequent fixes, replacement usually makes more sense than ongoing repairs. Look for signs like uneven cooling, strange noises, or rising energy use even after maintenance. In Upland's older housing stock, R-22 refrigerant systems are especially costly to service now that the refrigerant is phased out. AC installation and replacement in Upland lets you upgrade to higher-efficiency models that handle dust and wind better. For minor issues like a bad capacitor or clogged drain, DIY is often fine, but anything involving refrigerant, electrical wiring, or duct modifications requires a licensed pro.</p><h2>Steps for a Proper AC Installation</h2><p>A quality job starts with a load calculation to size the unit correctly for your home's square footage, insulation, and window exposure. Next comes removing the old equipment, checking or upgrading ductwork, and setting the new condenser on a level pad with proper clearances. Linesets must be evacuated and charged accurately to avoid efficiency loss or compressor damage. In areas like Ontario, technicians also account for higher wind loads when securing units. Skipping these steps leads to short cycling and premature failure, common complaints in the Inland Empire.</p><h2>Choosing the Right System for Local Homes</h2><p>High-efficiency heat pump or SEER 16+ units perform well against Upland's temperature swings. Consider variable-speed blowers that adjust airflow when dust loads increase during Santa Ana events. Pairing the new system with a fresh air filter and sealed ducts cuts energy waste. Homeowners in Claremont often choose systems with better dehumidification even though the air is generally dry. Always verify the contractor pulls permits and follows local codes for electrical and refrigerant handling.</p><h2>Common Challenges in Older Upland Homes</h2><p>Many properties here have undersized returns or flex duct that collapses over time, reducing airflow. Attic insulation may be missing or settled, forcing the AC to work harder. During replacement, pros often recommend sealing ducts and adding insulation to lower bills. Avoid cheap window units or portable options for whole-home cooling; they struggle with the sustained heat and dust. AC installation and replacement in Upland done right includes testing static pressure and airflow after setup.</p><h2>Working with a Local HVAC Contractor</h2><p>Choose a licensed company familiar with SoCal conditions rather than big-box installers. Ask about their process for load calculations, equipment brands they carry, and how they handle older homes. Get everything in writing, including warranty details on parts and labor. For reliable service in your area, contact BOMING Air Conditioning & Heating.</p>",
+    "faq": [
+      {
+        "q": "How long does AC replacement usually take in Upland?",
+        "a": "Most jobs take one to two days depending on duct modifications and electrical work needed."
+      },
+      {
+        "q": "What size AC do I need for my Upland home?",
+        "a": "A proper Manual J load calculation by a technician determines the correct size based on your insulation, windows, and layout."
+      },
+      {
+        "q": "Can I install a new AC myself to save money?",
+        "a": "No. Refrigerant handling and electrical work require EPA certification and permits that only licensed contractors can provide."
+      },
+      {
+        "q": "Will a new unit lower my summer electric bills?",
+        "a": "Higher SEER ratings and sealed ducts often reduce energy use, especially in homes with older inefficient equipment."
+      }
+    ],
+    "social_fb": "Thinking about upgrading your cooling system this season? Our latest guide covers everything Upland homeowners need to know about AC installation and replacement in Upland, from climate challenges to choosing the right equipment. Check it out and stay comfortable through the heat! 📞 657-275-5855",
+    "social_yelp": "Helpful read for anyone in Upland or nearby areas dealing with an aging AC. The article explains real steps and when it's time to replace versus repair. Worth a look before calling anyone.",
+    "kind": "service",
+    "topic": "AC installation and replacement in Upland: a homeowner's guide",
+    "city": "Upland",
+    "date": "2026-10-06",
+    "photos": [
+      "stock/046.jpg"
+    ]
+  },
+  {
     "slug": "hvac-chino-2026-10-05-6601",
     "title": "Chino Furnace Repair: Attic HVAC Service Restores System Performance",
     "meta": "Chino homeowners received targeted repair on an existing attic furnace, crawlspace ducts, and outdoor condenser to improve reliability in Southern California heat.",
