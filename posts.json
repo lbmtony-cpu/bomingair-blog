@@ -1,5 +1,39 @@
 [
   {
+    "slug": "ac-installation-replacement-homeowners-guide-pomona",
+    "title": "AC Installation in Pomona: Homeowner's Guide",
+    "meta": "Practical guide to AC installation in Pomona covering when to replace units, system choices, and steps for SoCal homes dealing with heat and dust.",
+    "hero_alt": "Technician installing a new air conditioning unit on a Southern California rooftop",
+    "body_html": "<h2>Understanding AC Installation in Pomona's Unique Climate</h2><p>AC installation in Pomona starts with recognizing how hot dry summers, Santa Ana winds, and fine desert dust push older systems to their limits. Many homes here were built decades ago with basic cooling that struggles during peak heat waves, driving up electric bills fast. Homeowners in Pomona often notice uneven temperatures and constant cycling before deciding on replacement. Nearby areas like Ontario and Claremont face similar conditions, making proper sizing essential to avoid short cycling or humidity issues.</p><h2>Signs It's Time for Replacement Instead of Repair</h2><p>Systems older than 12-15 years in Pomona homes usually warrant replacement over repeated fixes. Frequent breakdowns during summer, rising energy costs, and rooms that never cool evenly point to worn compressors or leaking coils. Dust from Santa Ana winds clogs filters and coils faster here than in milder coastal zones. If your unit uses R-22 refrigerant, replacement makes sense because parts and refills have become expensive. La Verne residents report the same pattern with older housing stock that lacks modern insulation.</p><h2>Choosing the Right System for Local Homes</h2><p>High-efficiency heat pumps or variable-speed units handle Pomona's temperature swings better than single-stage models. Look for SEER ratings of 16 or higher to cut summer bills in dry heat. Proper duct sealing matters because wind-driven dust infiltrates attics and crawlspaces common in local construction. A load calculation by a licensed contractor ensures the new system matches your home's square footage and insulation rather than relying on the old oversized unit. This step prevents short cycling that wastes energy.</p><h2>The Installation Process Explained Step by Step</h2><p>Professionals begin with a site inspection to check existing ductwork, electrical service, and condensate lines. Next they remove the old outdoor condenser and indoor evaporator coil, then install new linesets and secure the equipment on level pads. Electrical connections and thermostat wiring follow, along with nitrogen pressure testing to confirm no leaks. Final steps include charging the system to manufacturer specs and running a full performance test. In Pomona, technicians also verify the condensate drain handles monsoon-season rain without backup.</p><h2>What Homeowners Can Handle and When to Call a Pro</h2><p>You can change filters monthly and keep outdoor coils clear of leaves and debris to extend equipment life. Programmable thermostats are straightforward DIY upgrades that improve efficiency. Anything involving refrigerant, electrical panels, or duct modifications requires a licensed HVAC contractor due to safety codes and environmental rules. Attempting these tasks yourself risks voiding warranties and creating carbon monoxide or fire hazards.</p><h2>Aftercare to Protect Your New Investment</h2><p>Schedule professional tune-ups each spring before heat arrives. Keep vegetation trimmed at least two feet from the outdoor unit and replace filters on schedule. These habits combat the dust and wind that shorten equipment life in the Pomona area. Track monthly energy use to spot problems early. Contact BOMING Air Conditioning & Heating for honest assessments tailored to your home and local conditions.</p>",
+    "faq": [
+      {
+        "q": "How long does a typical AC installation take in Pomona?",
+        "a": "Most residential replacements finish in one day when the home has accessible ductwork and no major electrical upgrades are needed."
+      },
+      {
+        "q": "What size AC do I need for a Pomona house?",
+        "a": "A proper Manual J load calculation determines size based on insulation, windows, and orientation rather than square footage alone."
+      },
+      {
+        "q": "Can I install a new AC myself to save money?",
+        "a": "No. Refrigerant handling and electrical work require EPA certification and local permits; unlicensed work can create safety issues and void warranties."
+      },
+      {
+        "q": "How often should I replace my AC filter in dusty Pomona?",
+        "a": "Check monthly and replace every 30-60 days during peak summer use because Santa Ana winds carry extra dust."
+      }
+    ],
+    "social_fb": "Thinking about a new AC before another brutal Pomona summer? This guide walks through real steps for installation and replacement in local homes dealing with dust and Santa Ana winds. Helpful tips for Ontario and Claremont neighbors too. Read it here and call BOMING Air Conditioning & Heating at 657-275-5855 with questions.",
+    "social_yelp": "Pomona homeowners dealing with high summer bills might find this straightforward AC installation guide useful. Covers when to replace versus repair and simple maintenance anyone can do. Worth a quick read if you're near Claremont or La Verne.",
+    "kind": "service",
+    "topic": "AC installation and replacement in Pomona: a homeowner's guide",
+    "city": "Pomona",
+    "date": "2026-10-07",
+    "photos": [
+      "stock/011.jpg"
+    ]
+  },
+  {
     "slug": "ac-installation-replacement-guide-upland",
     "title": "AC Installation in Upland: Homeowner's Guide",
     "meta": "Practical guide to AC installation and replacement in Upland covering steps, climate challenges, and when to call pros for SoCal homes.",
