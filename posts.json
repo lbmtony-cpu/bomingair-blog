@@ -1,5 +1,34 @@
 [
   {
+    "slug": "hvac-norco-2026-10-16-8934",
+    "title": "Norco HVAC Repair: Dual Port Manometer Pressure Check",
+    "meta": "Norco HVAC repair in October 2026 using Fieldpiece and yellow dual port manometers to measure pressures and inspect insulation on existing equipment.",
+    "hero_alt": "Fieldpiece dual port manometer and yellow dual port manometer measuring HVAC pressure with yellow insulation around metal bracket and wire",
+    "body_html": "<h2>Pressure Diagnostics on Existing Norco System</h2><p>Technicians performed a service call on an existing AC and heating unit in Norco, CA during October 2026. Fieldpiece and yellow dual port manometers were connected to verify static and gas pressures across the system. Readings confirmed whether airflow and combustion levels remained within safe operating ranges for local conditions.</p><h2>Insulation and Bracket Inspection</h2><p>Yellow insulation wrapped around a metal bracket and adjacent wiring was examined for wear or displacement. Proper coverage prevents heat transfer and protects electrical connections from temperature swings common in Southern California homes. Any gaps were noted and corrected to maintain equipment integrity.</p><h2>Why Accurate Measurements Matter Locally</h2><p>Norco summers push cooling systems hard while winter heating loads still occur. Consistent pressure verification reduces energy waste and helps avoid premature component failure. Homeowners gain reliable comfort without unexpected downtime during peak seasons.</p><h2>Value Delivered Through Targeted Service</h2><p>By focusing on measurement and insulation details rather than full replacement, the repair extended the life of the existing equipment. Norco residents receive efficient operation and lower operating costs. For similar HVAC service needs, call 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What tools confirm HVAC pressures during a Norco repair?",
+        "a": "Dual port manometers such as Fieldpiece and yellow models provide direct static and gas pressure readings on existing equipment."
+      },
+      {
+        "q": "How does insulation around brackets help in Southern California?",
+        "a": "It limits heat transfer and shields wiring from temperature extremes, supporting reliable performance year-round."
+      }
+    ],
+    "social_fb": "Norco homeowners: see how manometer testing resolved pressure issues on existing HVAC equipment.",
+    "social_yelp": "Honest Norco repair story using pressure gauges and insulation checks on October 2026 service call.",
+    "kind": "case",
+    "topic": "jobsite 2026-10-16 Norco",
+    "city": "Norco",
+    "photos": [
+      "img/hvac-norco-2026-10-16-8934/01.jpg",
+      "img/hvac-norco-2026-10-16-8934/02.jpg",
+      "img/hvac-norco-2026-10-16-8934/03.jpg"
+    ],
+    "source": "icloud:2026-10-16-33.91416,-117.48934",
+    "date": "2026-10-17"
+  },
+  {
     "slug": "r-410a-to-r-454b-refrigerant-change-rowland-heights",
     "title": "R-410A to R-454B: AC Repair in Rowland Heights Guide",
     "meta": "Learn how the R-410A to R-454B change affects AC repair in Rowland Heights, including impacts on older systems and SoCal homes facing hot summers and high bills.",
