@@ -1,5 +1,34 @@
 [
   {
+    "slug": "hvac-norco-2026-10-16-8934",
+    "title": "Norco AC Repair: Fieldpiece Manometer Pressure Testing",
+    "meta": "Norco AC repair completed October 2026 using dual-port manometers to diagnose pressure issues on existing equipment for a Southern California homeowner.",
+    "hero_alt": "Yellow Fieldpiece dual port manometer showing pressure readings next to insulation metal bracket wire during Norco repair",
+    "body_html": "<h2>Pressure Diagnosis on Existing Norco System</h2><p>Technicians arrived in Norco for a service call on an existing AC and heating unit. Using a Fieldpiece dual-port manometer, static pressure readings were taken across the system to identify airflow restrictions. A second yellow dual-port manometer confirmed the initial measurements, revealing imbalances that affect cooling efficiency in Norco's hot climate.</p><h2>Inspection of Wall Insulation and Bracket</h2><p>Further checks located a yellow insulation metal bracket wire inside the wall cavity. The bracket had shifted, allowing insulation to compress and restrict duct airflow. Technicians repositioned the bracket and secured the insulation without disturbing the existing equipment or ductwork.</p><h2>Why Accurate Readings Matter in Southern California</h2><p>Norco homeowners face long cooling seasons and occasional heating demands. Precise manometer testing prevents unnecessary part replacements and restores proper airflow. Correcting the bracket issue improved system balance and reduced strain on the existing compressor and blower motor.</p><h2>Delivered Value for Local Homeowners</h2><p>The repair restored reliable performance to the existing unit using targeted diagnostics and minimal intervention. Homeowners gain consistent temperatures and lower operating stress without full system replacement. For similar Norco or Chino Hills service needs, call 657-275-5855.</p>",
+    "faq": [
+      {
+        "q": "What does a dual-port manometer measure during AC repair?",
+        "a": "It measures static pressure differences to locate airflow restrictions in existing duct systems."
+      },
+      {
+        "q": "Why address insulation brackets in wall cavities?",
+        "a": "Shifted brackets compress insulation and block airflow, reducing efficiency on existing equipment."
+      }
+    ],
+    "social_fb": "Norco AC repair completed with Fieldpiece manometers and bracket correction on existing equipment.",
+    "social_yelp": "Honest Norco service call using pressure testing tools for an existing AC system.",
+    "kind": "case",
+    "topic": "jobsite 2026-10-16 Norco",
+    "city": "Norco",
+    "photos": [
+      "img/hvac-norco-2026-10-16-8934/01.jpg",
+      "img/hvac-norco-2026-10-16-8934/02.jpg",
+      "img/hvac-norco-2026-10-16-8934/03.jpg"
+    ],
+    "source": "icloud:2026-10-16-33.91414,-117.48934",
+    "date": "2026-11-20"
+  },
+  {
     "slug": "hvac-corona-2026-11-19-8695",
     "title": "Corona AC Repair Resolves Wall Unit Ceiling Stains",
     "meta": "Corona AC repair on existing wall-mounted unit addressed water stains and ceiling damage near vents and sensor in November 2026 service call.",
